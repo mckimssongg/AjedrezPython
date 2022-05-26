@@ -1,5 +1,5 @@
 # AjedrezPython
-
+:)
   ```python
   
 class TableroPlantilla:
