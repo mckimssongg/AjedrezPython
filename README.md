@@ -42,13 +42,22 @@ class TableroPlantilla:
 
 
 pieza = {
-    'nombre': 'torre',
+    'nombre': 'caballo',
     'color': 'blanco',
     'posicion_actual': {
         'x': 7,
         'y': 1,
     },
-    'movientos': []
+    'movimientos': {
+        'primer_tipo_moviento': {
+            'x': -2,
+            'y': 1,
+        },  # primer_tipo_moviento simula el movimiento en L de un caballo
+        'segundo_tipo_moviento': {
+            'x': -1,
+            'y': 2,
+        },
+    }
 }
 
 
@@ -65,19 +74,26 @@ taberoajedrez.mostrar()
 
 print('-'*20)
 
-pieza = {
-    'nombre': 'torre',
-    'color': 'blanco',
-    'posicion_actual': {
-        'x': 1,
-        'y': 1,
-    },
-    'movimientos': [pieza['posicion_actual']]
-}
 
-taberoajedrez.poner(pieza['posicion_actual'], pieza['nombre'])
+def mover_pieza(pieza, nombre_movimiento=None):
+    movimiento = pieza['movimientos'][nombre_movimiento]
+
+    pieza['posicion_actual']['x'] = (
+        pieza['posicion_actual']['x'] + movimiento['x'])
+
+    pieza['posicion_actual']['y'] = (
+        pieza['posicion_actual']['y'] + movimiento['y'])
+
+    return pieza['posicion_actual']
+
+
+print(pieza['posicion_actual'])
+
+taberoajedrez.poner(
+    mover_pieza(pieza, 'primer_tipo_moviento'), pieza['nombre'])
+
+print(pieza['posicion_actual'])
 
 taberoajedrez.mostrar()
-print('te comiste una reina')
 
   ```
