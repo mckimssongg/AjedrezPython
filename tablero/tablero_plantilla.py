@@ -32,8 +32,8 @@ class TableroPlantilla:
     def mostrar(self):
         for i in range(self.filas):
             for j in range(self.columnas):
-                print(self.matriz[i][j], end=' ')
-            print()
+                self.matriz[i][j]
+        return self.matriz
 
     def poner(self, posicion, valor):
         self.matriz[posicion['x']][posicion['y']] = valor
