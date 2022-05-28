@@ -38,9 +38,3 @@ class TableroPlantilla:
 
     def obtener(self, posicion):
         return self.matriz[posicion.x][posicion.y]
-
-    def obtener_filas(self):
-        return self.filas
-
-    def obtener_columnas(self):
-        return self.columnas
