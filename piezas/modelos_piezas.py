@@ -72,22 +72,39 @@ class PiezaEspecial(PiezaBase):
         '''
         movimiento = pieza['movimientos'][nombre_movimiento]
 
-        if self.jugador.color == 'blanco':
+        if direccion == 'diagonal':
+            if self.jugador.color == 'blanco':
+                pieza['posicion_actual']['x'] = (
+                    pieza['posicion_actual']['x'] + movimiento['x'] * cantidad)
+                pieza['posicion_actual']['y'] = (
+                    pieza['posicion_actual']['y'] + movimiento['y'] * cantidad)
 
-            pieza['posicion_actual']['x'] = (
-                pieza['posicion_actual']['x'] + movimiento['x'] + cantidad)
+                return pieza['posicion_actual']
 
-            pieza['posicion_actual']['y'] = (
-                pieza['posicion_actual']['y'] + movimiento['y'] + cantidad)
+            if self.jugador.color == 'negro':
+                pieza['posicion_actual']['x'] = (
+                    pieza['posicion_actual']['x'] - movimiento['x'] * cantidad)
+                pieza['posicion_actual']['y'] = (
+                    pieza['posicion_actual']['y'] - movimiento['y'] * cantidad)
 
-            return pieza['posicion_actual']
+                return pieza['posicion_actual']
+        else:
+            if self.jugador.color == 'blanco':
 
-        if self.jugador.color == 'negro':
+                pieza['posicion_actual']['x'] = (
+                    pieza['posicion_actual']['x'] + movimiento['x'] + cantidad)
 
-            pieza['posicion_actual']['x'] = (
-                pieza['posicion_actual']['x'] - movimiento['x'] + cantidad)
+                pieza['posicion_actual']['y'] = (
+                    pieza['posicion_actual']['y'] + movimiento['y'] + cantidad)
 
-            pieza['posicion_actual']['y'] = (
-                pieza['posicion_actual']['y'] - movimiento['y'] + cantidad)
+                return pieza['posicion_actual']
 
-            return pieza['posicion_actual']
+            if self.jugador.color == 'negro':
+
+                pieza['posicion_actual']['x'] = (
+                    pieza['posicion_actual']['x'] - movimiento['x'] + cantidad)
+
+                pieza['posicion_actual']['y'] = (
+                    pieza['posicion_actual']['y'] - movimiento['y'] + cantidad)
+
+                return pieza['posicion_actual']
