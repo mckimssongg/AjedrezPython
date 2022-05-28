@@ -64,7 +64,7 @@ class PiezaEspecial(PiezaBase):
     def __init__(self, jugador, nombre, posicion_inicial, movimientos):
         super().__init__(jugador, nombre, posicion_inicial, movimientos)
 
-    def movimiento_avanzado(self, pieza, nombre_movimiento, cantidad):
+    def movimiento_avanzado(self, pieza, nombre_movimiento, cantidad, direccion):
         '''
         Este metodo nos servira para que las piezas especiales (reina, alfil, torre)
         -puedan moverse en diagonal
@@ -75,19 +75,19 @@ class PiezaEspecial(PiezaBase):
         if self.jugador.color == 'blanco':
 
             pieza['posicion_actual']['x'] = (
-                pieza['posicion_actual']['x'] + movimiento['x'] * cantidad)
+                pieza['posicion_actual']['x'] + movimiento['x'] + cantidad)
 
             pieza['posicion_actual']['y'] = (
-                pieza['posicion_actual']['y'] + movimiento['y'] * cantidad)
+                pieza['posicion_actual']['y'] + movimiento['y'] + cantidad)
 
             return pieza['posicion_actual']
 
         if self.jugador.color == 'negro':
 
             pieza['posicion_actual']['x'] = (
-                pieza['posicion_actual']['x'] - movimiento['x'] * cantidad)
+                pieza['posicion_actual']['x'] - movimiento['x'] + cantidad)
 
             pieza['posicion_actual']['y'] = (
-                pieza['posicion_actual']['y'] - movimiento['y'] * cantidad)
+                pieza['posicion_actual']['y'] - movimiento['y'] + cantidad)
 
             return pieza['posicion_actual']
