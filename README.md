@@ -1,5 +1,13 @@
 # AjedrezPython
-:)
+## -Libreria Grafica : Tkinter
+
+
+##   Diagrama UML 
+
+![Image](./assets/Diagrama1.png)
+
+
+## Codigo de prototipo
   ```python
   
 class TableroPlantilla:
