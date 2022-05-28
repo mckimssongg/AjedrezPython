@@ -11,11 +11,22 @@
   ```python
   
 class TableroPlantilla:
-
     '''
     Esta va ser la plantilla donde se mapearan la piezas segun
     su atributo posicion y podra mover las piezas por
     su metodo poner y obtener
+
+    [
+        ["torre", "alfil", "caballo", "reina", "rey", "caballo", "alfil", "torre"],
+        ["peon", "peon", "peon", "peon", "peon", "peon", "peon", "peon"],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0]
+    ]
+
     '''
 
     def __init__(self, filas, columnas):
@@ -68,13 +79,15 @@ pieza = {
     }
 }
 
-
 taberoajedrez = TableroPlantilla(8, 8)
+
 taberoajedrez.poner(
     {
         'x': 1,
         'y': 1,
-    }, 'Reina')
+    }, 'Reina'
+)
+
 taberoajedrez.mostrar()
 print('-'*20)
 taberoajedrez.poner(pieza['posicion_actual'], pieza['nombre'])
@@ -100,8 +113,41 @@ print(pieza['posicion_actual'])
 taberoajedrez.poner(
     mover_pieza(pieza, 'primer_tipo_moviento'), pieza['nombre'])
 
+taberoajedrez.mostrar()
 print(pieza['posicion_actual'])
 
+torre = {
+    'nombre': 'torre',
+    'color': 'blanco',
+    'posicion_actual': {
+        'x': 7,
+        'y': 0,
+    },
+    'movimientos': {
+        'izquierda': {
+            'x': -1,
+            'y': 0,
+        },
+        'derecha': {
+            'x': 1,
+            'y': 0,
+        },
+        'arriba': {
+            'x': 0,
+            'y': 1,
+        },
+        'abajo': {
+            'x': 0,
+            'y': -1,
+        },
+    }
+}
+
+print('-'*20)
+taberoajedrez.poner(
+    torre['posicion_actual'], torre['nombre'])
+
 taberoajedrez.mostrar()
+
 
   ```
