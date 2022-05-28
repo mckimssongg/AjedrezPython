@@ -3,8 +3,8 @@ class Jugador:
     Las instancias de esta clase nos serviran para
     de que jugador seran las piezas
 
-    Parametros:
-    color ----> (string) color de las piezas del jugador
+    #Parametros:
+    color               --->    (string) color de las piezas del jugador
     '''
 
     def __init__(self, color):
@@ -16,7 +16,7 @@ class PiezaBase:
     Esta clase servira para instanciae las piezas basicas tales como:
     Peon, Rey, Caballo.
 
-    Parametros:
+    #Parametros:
     jugador             --->    (object) instancia de una clase jugador al que se asociaran
     nombre              --->    (string) nombre de la pieza
     posicion_inicial    --->    (diccionario) diccionario con las coordenadas
