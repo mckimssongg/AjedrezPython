@@ -21,10 +21,12 @@ class TableroPlantilla:
         '''
         mapeo de las piezas en el tablero
         '''
+        self.filas = filas
+        self.columnas = columnas
         self.matriz = []
-        for i in range(8):
+        for i in range(filas):
             self.matriz.append([])
-            for j in range(8):
+            for j in range(columnas):
                 self.matriz[i].append(0)
 
     def mostrar(self):
@@ -38,3 +40,9 @@ class TableroPlantilla:
 
     def obtener(self, posicion):
         return self.matriz[posicion.x][posicion.y]
+
+    def obtener_filas(self):
+        return self.filas
+
+    def obtener_columnas(self):
+        return self.columnas
