@@ -27,10 +27,18 @@ class PiezaBase:
 
     def __init__(self, jugador, nombre, posicion_inicial, movimientos):
         self.jugador = jugador
+        self.nombre = nombre
         self.posicion_actual = posicion_inicial
         self.movimientos = movimientos
 
     def mover_pieza(self, pieza, nombre_movimiento):
+        '''
+        Esta funcion nos servira para mover las piezas
+
+        #Parametros:
+        pieza               --->    (object) instancia de una clase pieza
+        nombre_movimiento   --->    (string) nombre del movimiento que se desea realizar
+        '''
         movimiento = pieza['movimientos'][nombre_movimiento]
 
         if self.jugador.color == 'blancas':
@@ -53,6 +61,9 @@ class PiezaBase:
 
             return pieza['posicion_actual']
 
+    def __str__(self):
+        return self.nombre
+
 
 class PiezaEspecial(PiezaBase):
     '''
@@ -69,6 +80,12 @@ class PiezaEspecial(PiezaBase):
         Este metodo nos servira para que las piezas especiales (reina, alfil, torre)
         -puedan moverse en diagonal
         -puedan moverse en linea recta
+
+        #Parametros:
+        pieza               --->    (object) instancia de una clase pieza
+        nombre_movimiento   --->    (string) nombre del movimiento que se desea realizar
+        cantidad            --->    (int) cantidad de casillas que se desea mover
+        direccion           --->    (string) direccion en la que se desea mover
         '''
         movimiento = pieza['movimientos'][nombre_movimiento]
 
