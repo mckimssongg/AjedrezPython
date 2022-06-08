@@ -108,20 +108,20 @@ class PiezaEspecial(PiezaBase):
         else:
             if self.jugador.color == 'blanco':
 
-                pieza['posicion_actual']['x'] = (
-                    pieza['posicion_actual']['x'] + movimiento['x'] + cantidad)
-
-                pieza['posicion_actual']['y'] = (
-                    pieza['posicion_actual']['y'] + movimiento['y'] + cantidad)
+                for i in range(cantidad):
+                    pieza['posicion_actual']['x'] = (
+                        pieza['posicion_actual']['x'] + movimiento['x'])
+                    pieza['posicion_actual']['y'] = (
+                        pieza['posicion_actual']['y'] + movimiento['y'])
 
                 return pieza['posicion_actual']
 
             if self.jugador.color == 'negro':
 
-                pieza['posicion_actual']['x'] = (
-                    pieza['posicion_actual']['x'] - movimiento['x'] + cantidad)
-
-                pieza['posicion_actual']['y'] = (
-                    pieza['posicion_actual']['y'] - movimiento['y'] + cantidad)
+                for i in range(cantidad):
+                    pieza['posicion_actual']['x'] = (
+                        pieza['posicion_actual']['x'] - movimiento['x'])
+                    pieza['posicion_actual']['y'] = (
+                        pieza['posicion_actual']['y'] - movimiento['y'])
 
                 return pieza['posicion_actual']
