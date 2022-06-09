@@ -1,8 +1,4 @@
-try:
-    import tkinter as tk 
-    from tkinter import ttk
-except ImportError:
-    import Tkinter as tk 
+import tkinter as tk
 
 from tablero.tablero_plantilla import TableroPlantilla
 
