@@ -25,9 +25,9 @@ class play():
         for i in range (8):
             for j in range (8):
                 if (i+j) % 2 == 0:
-                    self.interfaz.create_rectangle(i*self.cuadro, j*self.cuadro, (i+1)*self.cuadro, (j+1)*self.cuadro, fill="#ECBF66")
+                    self.interfaz.create_rectangle(i*self.cuadro, j*self.cuadro, (i+1)*self.cuadro, (j+1)*self.cuadro, fill="#FFFFFF")
                 else:
-                    self.interfaz.create_rectangle(i*self.cuadro, j*self.cuadro, (i+1)*self.cuadro, (j+1)*self.cuadro, fill="#4B2301")
+                    self.interfaz.create_rectangle(i*self.cuadro, j*self.cuadro, (i+1)*self.cuadro, (j+1)*self.cuadro, fill="#000000")
 
 
 MotorAjedrez = play(80)
