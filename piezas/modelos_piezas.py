@@ -31,36 +31,20 @@ class PiezaBase:
         self.posicion_actual = posicion_inicial
         self.movimientos = movimientos
 
-    def mover_pieza(self, pieza, nombre_movimiento):
+    def mover_pieza(self,nombre_movimiento):
         '''
         Esta funcion nos servira para mover las piezas
 
         #Parametros:
-        pieza               --->    (object) instancia de una clase pieza
         nombre_movimiento   --->    (string) nombre del movimiento que se desea realizar
         '''
-        movimiento = pieza['movimientos'][nombre_movimiento]
+        movimiento = self.movimientos[nombre_movimiento]
+        
+        self.posicion_actual['x'] += movimiento['x']
+        self.posicion_actual['y'] += movimiento['y']
 
-        if self.jugador.color == 'blancas':
-
-            pieza['posicion_actual']['x'] = (
-                pieza['posicion_actual']['x'] + movimiento['x'])
-
-            pieza['posicion_actual']['y'] = (
-                pieza['posicion_actual']['y'] + movimiento['y'])
-
-            return pieza['posicion_actual']
-
-        if self.jugador.color == 'negro':
-
-            pieza['posicion_actual']['x'] = (
-                pieza['posicion_actual']['x'] - movimiento['x'])
-
-            pieza['posicion_actual']['y'] = (
-                pieza['posicion_actual']['y'] - movimiento['y'])
-
-            return pieza['posicion_actual']
-
+        return self.posicion_actual
+    
     def __str__(self):
         return self.nombre
 
