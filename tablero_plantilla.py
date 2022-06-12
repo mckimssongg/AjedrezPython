@@ -90,7 +90,6 @@ while not end:
         else:
             input("Esta opcion no existe")
             borrarPantalla()
-    
     else:
         input("Esta opcion no existe")
         borrarPantalla()
