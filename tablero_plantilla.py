@@ -45,7 +45,7 @@ class TableroPlantilla:
         {self.matriz[7]}
         """
         print(matrizfomateada)
-        # return self.matriz
+        return self.matriz
 
     def poner(self, posicion, valor):
 
