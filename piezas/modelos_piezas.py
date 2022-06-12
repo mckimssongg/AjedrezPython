@@ -57,7 +57,7 @@ class PiezaBase:
         return self.nombre
 
 
-class PiezaEspecial(PiezaBase):
+class PiezaEspecial(PiezaBase):  # Pendiente a cambios
     '''
     Esta clase servira para instanciae las piezas especiales tales como:
     Reina, Alfil, Torre. Esta class hereda de la clase PiezaBase y ademas

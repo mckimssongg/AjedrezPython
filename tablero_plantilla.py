@@ -73,7 +73,7 @@ while not end:
     op = input("Siguiente accion: ")
     if op == "bye":
         end = True
-        input('Bye')
+        input('fin')
     elif op == "mover":
         select = input("Seleccione pieza: ")
         if select == "reina_b":
@@ -83,18 +83,40 @@ while not end:
                 play.poner(reina_blanca.mover_pieza(
                     movimiento), reina_blanca.nombre)
                 borrarPantalla()
+
+            elif movimiento == "atras":
+                play.poner(reina_blanca.mover_pieza(
+                    movimiento), reina_blanca.nombre)
+                borrarPantalla()
+
+            elif movimiento == "izquierda":
+                play.poner(reina_blanca.mover_pieza(
+                    movimiento), reina_blanca.nombre)
+                borrarPantalla()
+            elif movimiento == "derecha":
+                play.poner(reina_blanca.mover_pieza(
+                    movimiento), reina_blanca.nombre)
+                borrarPantalla()
+
             elif movimiento == "esq_1":
                 play.poner(reina_blanca.mover_pieza(
                     movimiento), reina_blanca.nombre)
+                borrarPantalla()
+
             elif movimiento == "esq_2":
                 play.poner(reina_blanca.mover_pieza(
                     movimiento), reina_blanca.nombre)
+                borrarPantalla()
+
             elif movimiento == "esq_3":
                 play.poner(reina_blanca.mover_pieza(
                     movimiento), reina_blanca.nombre)
+                borrarPantalla()
+
             elif movimiento == "esq_4":
                 play.poner(reina_blanca.mover_pieza(
                     movimiento), reina_blanca.nombre)
+                borrarPantalla()
 
             else:
                 input("Esta opcion no existe")
