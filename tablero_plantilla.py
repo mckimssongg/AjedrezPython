@@ -1,8 +1,13 @@
+from piezas.piezas_obj import *
 import os
-borrarPantalla = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
+
+
+def borrarPantalla(): return os.system(
+    'cls' if os.name in ('nt', 'dos') else 'clear')
+
+
 borrarPantalla()
 
-from piezas.piezas_obj import *
 
 class TableroPlantilla:
     '''
@@ -17,16 +22,16 @@ class TableroPlantilla:
         '''
         self.filas = filas
         self.columnas = columnas
-        self.matriz = [ [0 for i in range(columnas)] for j in range(filas) ]
-        
+        self.matriz = [[0 for i in range(columnas)] for j in range(filas)]
+
     def colocarPiezas(self, piezas):
         for pieza in piezas:
             self.poner(pieza.posicion_actual, pieza.nombre)
-            
+
     def mostrar(self):
         p_init = [reina_blanca]
         self.colocarPiezas(p_init)
-        
+
         matrizfomateada = f"""
         {self.matriz[0]}
         {self.matriz[1]}
@@ -38,10 +43,11 @@ class TableroPlantilla:
         {self.matriz[7]}
         """
         print(matrizfomateada)
-        #return self.matriz
+        # return self.matriz
 
     def poner(self, posicion, valor):
-        self.matriz = [ [0 for i in range( self.columnas )] for j in range( self.filas ) ]
+        self.matriz = [[0 for i in range(self.columnas)]
+                       for j in range(self.filas)]
         self.matriz[posicion['x']][posicion['y']] = valor
 
     def obtener(self, posicion):
@@ -67,11 +73,15 @@ while not end:
         input('Bye')
     elif op == "mover":
         select = input("Seleccione pieza: ")
-        movimiento = input("Seleccione movimiento: ")
         if select == "reina_b":
+            movimiento = input("Seleccione movimiento: ")
             if movimiento == "frente":
-                play.poner(reina_blanca.mover_pieza(movimiento), "reina_b")
+                play.poner(reina_blanca.mover_pieza(
+                    movimiento), reina_blanca.nombre)
                 borrarPantalla()
+            elif movimiento == "esq_derecha":
+                play.poner(reina_blanca.mover_pieza(
+                    movimiento), reina_blanca.nombre)
             else:
                 input("Esta opcion no existe")
                 borrarPantalla()

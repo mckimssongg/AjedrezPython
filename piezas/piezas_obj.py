@@ -8,17 +8,17 @@ reina_blanca = PiezaEspecial(
     blanco,
     "reina_b",
     {
-        "x":7,
-        "y":3
+        "x": 7,
+        "y": 3
     },
     {
-        "frente":{
-            "x":-1,
-            "y":0
+        "frente": {
+            "x": -1,
+            "y": 0
         },
-        "es_der":{
-            "x":1,
-            "y":1,
+        "esq_derecha": {
+            "x": -1,
+            "y": 1,
         }
     }
-    )
+)
