@@ -1,5 +1,5 @@
 import os
-borrarPantalla = lambda: os.system("cls")
+borrarPantalla = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
 borrarPantalla()
 
 from piezas.piezas_obj import *
@@ -9,18 +9,6 @@ class TableroPlantilla:
     Esta va ser la plantilla donde se mapearan la piezas segun
     su atributo posicion y podra mover las piezas por
     su metodo poner y obtener
-
-    [
-        ["torre", "alfil", "caballo", "reina", "rey", "caballo", "alfil", "torre"],
-        ["peon", "peon", "peon", "peon", "peon", "peon", "peon", "peon"],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0]
-    ]
-
     '''
 
     def __init__(self, filas, columnas):
