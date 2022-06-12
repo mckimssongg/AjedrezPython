@@ -16,9 +16,21 @@ reina_blanca = PiezaEspecial(
             "x": -1,
             "y": 0
         },
-        "esq_derecha": {
+        "esq_1": {
+            "x": 1,
+            "y": 1,
+        },
+        "esq_2": {
             "x": -1,
             "y": 1,
+        },
+        "esq_3": {
+            "x": -1,
+            "y": -1,
+        },
+        "esq_4": {
+            "x": 1,
+            "y": -1,
         }
     }
 )

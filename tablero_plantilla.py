@@ -22,6 +22,7 @@ class TableroPlantilla:
         '''
         self.filas = filas
         self.columnas = columnas
+        self.p_init = [reina_blanca]
         self.matriz = [[0 for i in range(columnas)] for j in range(filas)]
 
     def colocarPiezas(self, piezas):
@@ -29,8 +30,7 @@ class TableroPlantilla:
             self.poner(pieza.posicion_actual, pieza.nombre)
 
     def mostrar(self):
-        p_init = [reina_blanca]
-        self.colocarPiezas(p_init)
+        self.colocarPiezas(self.p_init)
 
         matrizfomateada = f"""
         {self.matriz[0]}
@@ -46,6 +46,7 @@ class TableroPlantilla:
         # return self.matriz
 
     def poner(self, posicion, valor):
+
         self.matriz = [[0 for i in range(self.columnas)]
                        for j in range(self.filas)]
         self.matriz[posicion['x']][posicion['y']] = valor
@@ -75,13 +76,24 @@ while not end:
         select = input("Seleccione pieza: ")
         if select == "reina_b":
             movimiento = input("Seleccione movimiento: ")
+
             if movimiento == "frente":
                 play.poner(reina_blanca.mover_pieza(
                     movimiento), reina_blanca.nombre)
                 borrarPantalla()
-            elif movimiento == "esq_derecha":
+            elif movimiento == "esq_1":
                 play.poner(reina_blanca.mover_pieza(
                     movimiento), reina_blanca.nombre)
+            elif movimiento == "esq_2":
+                play.poner(reina_blanca.mover_pieza(
+                    movimiento), reina_blanca.nombre)
+            elif movimiento == "esq_3":
+                play.poner(reina_blanca.mover_pieza(
+                    movimiento), reina_blanca.nombre)
+            elif movimiento == "esq_4":
+                play.poner(reina_blanca.mover_pieza(
+                    movimiento), reina_blanca.nombre)
+
             else:
                 input("Esta opcion no existe")
                 borrarPantalla()
