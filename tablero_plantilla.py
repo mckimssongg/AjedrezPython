@@ -30,6 +30,8 @@ class TableroPlantilla:
             self.poner(pieza.posicion_actual, pieza.nombre)
 
     def mostrar(self):
+        self.matriz = [[0 for i in range(self.columnas)]
+                       for j in range(self.filas)]
         self.colocarPiezas(self.p_init)
 
         matrizfomateada = f"""
