@@ -59,7 +59,7 @@ class PiezaEspecial(PiezaBase):
     def __init__(self, jugador, nombre, posicion_inicial, movimientos):
         super().__init__(jugador, nombre, posicion_inicial, movimientos)
 
-    def movimiento_avanzado(self, pieza, nombre_movimiento, cantidad, direccion):
+    def movimiento_avanzado(self,nombre_movimiento, cantidad, direccion):
         '''
         Este metodo nos servira para que las piezas especiales (reina, alfil, torre)
         -puedan moverse en diagonal

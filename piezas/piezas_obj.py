@@ -16,7 +16,9 @@ reina_blanca = PiezaEspecial(
             "x":-1,
             "y":0
         },
-        "etc":{
+        "es_der":{
+            "x":1,
+            "y":1,
         }
     }
     )
