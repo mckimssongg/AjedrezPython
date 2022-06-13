@@ -31,7 +31,7 @@ class PiezaBase:
         self.posicion_actual = posicion_inicial
         self.movimientos = movimientos
 
-    def mover_pieza(self,nombre_movimiento):
+    def mover_pieza(self, nombre_movimiento):
         '''
         Esta funcion nos servira para mover las piezas
 
@@ -39,17 +39,25 @@ class PiezaBase:
         nombre_movimiento   --->    (string) nombre del movimiento que se desea realizar
         '''
         movimiento = self.movimientos[nombre_movimiento]
-        
-        self.posicion_actual['x'] += movimiento['x']
-        self.posicion_actual['y'] += movimiento['y']
+
+        predic = {
+            "x": self.posicion_actual['x'] + movimiento['x'],
+            "y": self.posicion_actual['y'] + movimiento['y']
+        }
+
+        if (predic['x'] < 8 and predic['y'] < 8 and predic['x'] >= 0 and predic['y'] >= 0):
+            self.posicion_actual['x'] += movimiento['x']
+            self.posicion_actual['y'] += movimiento['y']
+        else:
+            print(f"Posicion/movimiento de {self.nombre} no valida")
 
         return self.posicion_actual
-    
+
     def __str__(self):
         return self.nombre
 
 
-class PiezaEspecial(PiezaBase):
+class PiezaEspecial(PiezaBase):  # Pendiente a cambios
     '''
     Esta clase servira para instanciae las piezas especiales tales como:
     Reina, Alfil, Torre. Esta class hereda de la clase PiezaBase y ademas
@@ -59,7 +67,7 @@ class PiezaEspecial(PiezaBase):
     def __init__(self, jugador, nombre, posicion_inicial, movimientos):
         super().__init__(jugador, nombre, posicion_inicial, movimientos)
 
-    def movimiento_avanzado(self, pieza, nombre_movimiento, cantidad, direccion):
+    def movimiento_avanzado(self, nombre_movimiento, cantidad, direccion):
         '''
         Este metodo nos servira para que las piezas especiales (reina, alfil, torre)
         -puedan moverse en diagonal
