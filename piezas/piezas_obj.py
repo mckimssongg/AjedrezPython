@@ -95,6 +95,29 @@ alfil_blanco0 = PiezaEspecial(
     blanco,
     "alfilB",
 
+    {   "x": 7, "y": 2 },
+
+    {
+      "diagDD":
+        { "x": 1, "y": 1 },
+
+      "diagDU":
+        { "x": -1, "y": 1 },  
+
+       "diagIU":
+        { "x": -1, "y": -1 }, 
+
+       "diagID":
+           { "x": 1, "y": -1 },   
+    }
+)
+
+
+alfil_blanco = PiezaEspecial(
+
+    blanco,
+    "alfilB",
+
     {   "x": 7, "y": 5 },
 
     {

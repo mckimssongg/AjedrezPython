@@ -1,4 +1,5 @@
-from piezas.piezas_obj import reina_blanca, torre_blanca, torre_blanca0, alfil_blanco0
+from piezas.piezas_obj import (reina_blanca, torre_blanca, torre_blanca0, alfil_blanco0,
+                                alfil_blanco)
 
 import os
 
@@ -64,12 +65,18 @@ class Logic:
 
             self.tablero.poner(alfil_blanco0.mover_pieza(
                 movimiento), alfil_blanco0.nombre)
+
+            self.tablero.poner(alfil_blanco.mover_pieza(
+                movimiento), alfil_blanco0.nombre)
 #---------------------------------------------------------------------------
         elif movimiento == "diagDU":
             self.tablero.poner(reina_blanca.mover_pieza(
                 movimiento), reina_blanca.nombre)
 
             self.tablero.poner(alfil_blanco0.mover_pieza(
+                movimiento), alfil_blanco0.nombre)
+
+            self.tablero.poner(alfil_blanco.mover_pieza(
                 movimiento), alfil_blanco0.nombre)
 #---------------------------------------------------------------------------
         elif movimiento == "diagIU":
@@ -78,12 +85,18 @@ class Logic:
 
             self.tablero.poner(alfil_blanco0.mover_pieza(
                 movimiento), alfil_blanco0.nombre)
+
+            self.tablero.poner(alfil_blanco.mover_pieza(
+                movimiento), alfil_blanco0.nombre)
 #---------------------------------------------------------------------------
         elif movimiento == "diagID":
             self.tablero.poner(reina_blanca.mover_pieza(
                 movimiento), reina_blanca.nombre)
 
             self.tablero.poner(alfil_blanco0.mover_pieza(
+                movimiento), alfil_blanco0.nombre)
+
+            self.tablero.poner(alfil_blanco.mover_pieza(
                 movimiento), alfil_blanco0.nombre)
 #---------------------------------------------------------------------------
                 
