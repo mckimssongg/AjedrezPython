@@ -1,12 +1,4 @@
 from piezas.piezas_obj import *
-import os
-
-
-def borrarPantalla(): return os.system(
-    'cls' if os.name in ('nt', 'dos') else 'clear')
-
-
-borrarPantalla()
 
 
 class TableroPlantilla:
@@ -64,66 +56,3 @@ class TableroPlantilla:
 
 
 play = TableroPlantilla(8, 8)
-
-end = False
-while not end:
-    print("\n")
-    play.mostrar()
-    print("\n")
-    op = input("Siguiente accion: ")
-    if op == "bye":
-        end = True
-        input('fin')
-    elif op == "mover":
-        select = input("Seleccione pieza: ")
-        if select == "reina_b":
-            movimiento = input("Seleccione movimiento: ")
-
-            if movimiento == "frente":
-                play.poner(reina_blanca.mover_pieza(
-                    movimiento), reina_blanca.nombre)
-                borrarPantalla()
-
-            elif movimiento == "atras":
-                play.poner(reina_blanca.mover_pieza(
-                    movimiento), reina_blanca.nombre)
-                borrarPantalla()
-
-            elif movimiento == "izquierda":
-                play.poner(reina_blanca.mover_pieza(
-                    movimiento), reina_blanca.nombre)
-                borrarPantalla()
-            elif movimiento == "derecha":
-                play.poner(reina_blanca.mover_pieza(
-                    movimiento), reina_blanca.nombre)
-                borrarPantalla()
-
-            elif movimiento == "esq_1":
-                play.poner(reina_blanca.mover_pieza(
-                    movimiento), reina_blanca.nombre)
-                borrarPantalla()
-
-            elif movimiento == "esq_2":
-                play.poner(reina_blanca.mover_pieza(
-                    movimiento), reina_blanca.nombre)
-                borrarPantalla()
-
-            elif movimiento == "esq_3":
-                play.poner(reina_blanca.mover_pieza(
-                    movimiento), reina_blanca.nombre)
-                borrarPantalla()
-
-            elif movimiento == "esq_4":
-                play.poner(reina_blanca.mover_pieza(
-                    movimiento), reina_blanca.nombre)
-                borrarPantalla()
-
-            else:
-                input("Esta opcion no existe")
-                borrarPantalla()
-        else:
-            input("Esta opcion no existe")
-            borrarPantalla()
-    else:
-        input("Esta opcion no existe")
-        borrarPantalla()

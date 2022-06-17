@@ -5,7 +5,7 @@ negro = Jugador('negro')
 
 reina_blanca = PiezaEspecial(
     blanco,
-    "reina_b",
+    "reinaB",
     {
         "x": 7,
         "y": 3
