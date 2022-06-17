@@ -1,4 +1,4 @@
-from piezas.piezas_obj import reina_blanca, torre_blanca
+from piezas.piezas_obj import reina_blanca, torre_blanca, torre_blanca0, alfil_blanco0
 
 import os
 
@@ -21,42 +21,71 @@ class Logic:
         if movimiento == "frente":
             self.tablero.poner(reina_blanca.mover_pieza(
                 movimiento), reina_blanca.nombre)
+
             self.tablero.poner(torre_blanca.mover_pieza(
                 movimiento), torre_blanca.nombre)
 
+            self.tablero.poner(torre_blanca0.mover_pieza(
+                movimiento), torre_blanca0.nombre)
+#---------------------------------------------------------------------------
         elif movimiento == "atras":
             self.tablero.poner(reina_blanca.mover_pieza(
                 movimiento), reina_blanca.nombre)
+
             self.tablero.poner(torre_blanca.mover_pieza(
                 movimiento), torre_blanca.nombre)
 
+            self.tablero.poner(torre_blanca0.mover_pieza(
+                movimiento), torre_blanca0.nombre)
+#---------------------------------------------------------------------------
         elif movimiento == "izquierda":
             self.tablero.poner(reina_blanca.mover_pieza(
                 movimiento), reina_blanca.nombre)
+
             self.tablero.poner(torre_blanca.mover_pieza(
                 movimiento), torre_blanca.nombre)
 
+            self.tablero.poner(torre_blanca0.mover_pieza(
+                movimiento), torre_blanca0.nombre)
+#---------------------------------------------------------------------------
         elif movimiento == "derecha":
             self.tablero.poner(reina_blanca.mover_pieza(
                 movimiento), reina_blanca.nombre)
+
             self.tablero.poner(torre_blanca.mover_pieza(
                 movimiento), torre_blanca.nombre)
-                
+
+            self.tablero.poner(torre_blanca0.mover_pieza(
+                movimiento), torre_blanca0.nombre)
+#---------------------------------------------------------------------------               
         elif movimiento == "diagDD":
             self.tablero.poner(reina_blanca.mover_pieza(
                 movimiento), reina_blanca.nombre)
+
+            self.tablero.poner(alfil_blanco0.mover_pieza(
+                movimiento), alfil_blanco0.nombre)
+#---------------------------------------------------------------------------
         elif movimiento == "diagDU":
             self.tablero.poner(reina_blanca.mover_pieza(
                 movimiento), reina_blanca.nombre)
 
+            self.tablero.poner(alfil_blanco0.mover_pieza(
+                movimiento), alfil_blanco0.nombre)
+#---------------------------------------------------------------------------
         elif movimiento == "diagIU":
             self.tablero.poner(reina_blanca.mover_pieza(
                 movimiento), reina_blanca.nombre)
 
+            self.tablero.poner(alfil_blanco0.mover_pieza(
+                movimiento), alfil_blanco0.nombre)
+#---------------------------------------------------------------------------
         elif movimiento == "diagID":
             self.tablero.poner(reina_blanca.mover_pieza(
                 movimiento), reina_blanca.nombre)
 
+            self.tablero.poner(alfil_blanco0.mover_pieza(
+                movimiento), alfil_blanco0.nombre)
+#---------------------------------------------------------------------------
                 
         else:
             input("Esta opcion no existe")
