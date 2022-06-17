@@ -1,4 +1,4 @@
-from piezas.piezas_obj import reina_blanca
+from piezas.piezas_obj import reina_blanca, torre_blanca
 
 import os
 
@@ -21,33 +21,43 @@ class Logic:
         if movimiento == "frente":
             self.tablero.poner(reina_blanca.mover_pieza(
                 movimiento), reina_blanca.nombre)
+            self.tablero.poner(torre_blanca.mover_pieza(
+                movimiento), torre_blanca.nombre)
 
         elif movimiento == "atras":
             self.tablero.poner(reina_blanca.mover_pieza(
                 movimiento), reina_blanca.nombre)
+            self.tablero.poner(torre_blanca.mover_pieza(
+                movimiento), torre_blanca.nombre)
 
         elif movimiento == "izquierda":
             self.tablero.poner(reina_blanca.mover_pieza(
                 movimiento), reina_blanca.nombre)
+            self.tablero.poner(torre_blanca.mover_pieza(
+                movimiento), torre_blanca.nombre)
+
         elif movimiento == "derecha":
             self.tablero.poner(reina_blanca.mover_pieza(
                 movimiento), reina_blanca.nombre)
-
-        elif movimiento == "esq_1":
+            self.tablero.poner(torre_blanca.mover_pieza(
+                movimiento), torre_blanca.nombre)
+                
+        elif movimiento == "diagDD":
             self.tablero.poner(reina_blanca.mover_pieza(
                 movimiento), reina_blanca.nombre)
-        elif movimiento == "esq_2":
-            self.tablero.poner(reina_blanca.mover_pieza(
-                movimiento), reina_blanca.nombre)
-
-        elif movimiento == "esq_3":
-            self.tablero.poner(reina_blanca.mover_pieza(
-                movimiento), reina_blanca.nombre)
-
-        elif movimiento == "esq_4":
+        elif movimiento == "diagDU":
             self.tablero.poner(reina_blanca.mover_pieza(
                 movimiento), reina_blanca.nombre)
 
+        elif movimiento == "diagIU":
+            self.tablero.poner(reina_blanca.mover_pieza(
+                movimiento), reina_blanca.nombre)
+
+        elif movimiento == "diagID":
+            self.tablero.poner(reina_blanca.mover_pieza(
+                movimiento), reina_blanca.nombre)
+
+                
         else:
             input("Esta opcion no existe")
             borrarPantalla()

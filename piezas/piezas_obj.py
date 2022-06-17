@@ -27,21 +27,43 @@ reina_blanca = PiezaEspecial(
             "x": 0,
             "y": -1
         },
-        "esq_1": {
+        "diagDD": {
             "x": 1,
             "y": 1,
         },
-        "esq_2": {
+        "diagDU": {
             "x": -1,
             "y": 1,
         },
-        "esq_3": {
+        "diagIU": {
             "x": -1,
             "y": -1,
         },
-        "esq_4": {
+        "diagID": {
             "x": 1,
             "y": -1,
         }
     }
+)
+
+torre_blanca = PiezaEspecial(
+
+    blanco,
+    "torreB",
+    { "x": 7, "y": 7 },
+
+    { 
+    "frente":
+     { "x": -1, "y": 0 }, 
+
+    "atras":
+     { "x": 1, "y": 0 },
+
+    "izquierda":
+    { "x": 0, "y": -1 },
+
+    "derecha":
+    { "x": 0, "y": 1 },
+
+    },
 )

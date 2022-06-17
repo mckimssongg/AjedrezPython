@@ -15,6 +15,7 @@ class TableroPlantilla:
         self.filas = filas
         self.columnas = columnas
         self.p_init = [reina_blanca]
+        self.t_init = [torre_blanca]
         self.matriz = [[0 for i in range(columnas)] for j in range(filas)]
 
     def colocarPiezas(self, piezas):
@@ -25,6 +26,7 @@ class TableroPlantilla:
         self.matriz = [[0 for i in range(self.columnas)]
                        for j in range(self.filas)]
         self.colocarPiezas(self.p_init)
+        self.colocarPiezas(self.t_init)
 
         # matrizfomateada = f"""
         # {self.matriz[0]}

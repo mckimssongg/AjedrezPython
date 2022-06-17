@@ -37,7 +37,7 @@ class ventana():
         movimiento = tk.StringVar(
             self.ventana, value="Movimiento...", name="movimiento")
         option_movimiento = tk.OptionMenu(self.ventana, movimiento,
-                                          "frente", "atras", "derecha", "izquierda", "esq_1", "esq_2", "esq_3", "esq_4", command=self.mover_pieza)
+                                          "frente", "atras", "derecha", "izquierda", "diagDD", "diagDU", "diagIU", "diagID", command=self.mover_pieza)
         option_movimiento.pack(padx=10, pady=10)
 
     def btn_selec_pieza(self):
