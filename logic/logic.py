@@ -15,45 +15,38 @@ class Logic:
         self.tablero = tablero
 
     def accion(self, movimiento):
-        # if select == "reinaB":
+        print(movimiento)
+        # if select == "reinaB": #aca se eligira la pieza, "select" debera de ser un parametro de la funcion
         #     movimiento = input("Seleccione movimiento: ")
         if movimiento == "frente":
             self.tablero.poner(reina_blanca.mover_pieza(
                 movimiento), reina_blanca.nombre)
-            borrarPantalla()
 
         elif movimiento == "atras":
             self.tablero.poner(reina_blanca.mover_pieza(
                 movimiento), reina_blanca.nombre)
-            borrarPantalla()
 
         elif movimiento == "izquierda":
             self.tablero.poner(reina_blanca.mover_pieza(
                 movimiento), reina_blanca.nombre)
-            borrarPantalla()
         elif movimiento == "derecha":
             self.tablero.poner(reina_blanca.mover_pieza(
                 movimiento), reina_blanca.nombre)
-            borrarPantalla()
 
         elif movimiento == "esq_1":
             self.tablero.poner(reina_blanca.mover_pieza(
                 movimiento), reina_blanca.nombre)
-            borrarPantalla()
         elif movimiento == "esq_2":
             self.tablero.poner(reina_blanca.mover_pieza(
                 movimiento), reina_blanca.nombre)
-            borrarPantalla()
 
         elif movimiento == "esq_3":
             self.tablero.poner(reina_blanca.mover_pieza(
                 movimiento), reina_blanca.nombre)
-            borrarPantalla()
 
         elif movimiento == "esq_4":
             self.tablero.poner(reina_blanca.mover_pieza(
                 movimiento), reina_blanca.nombre)
-            borrarPantalla()
 
         else:
             input("Esta opcion no existe")

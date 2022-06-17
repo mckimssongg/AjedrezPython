@@ -29,21 +29,24 @@ class ventana():
         self.ventana.mainloop()
 
     def mover_pieza(self, valor):
-        print(valor)
         self.motor.accion(movimiento=valor)
         self.posicion.mostrar()
         self.mostrarPiezas()
 
-    def crearTablero(self):
-        select = tk.StringVar(self.ventana, value="Pieza...", name="select")
-        # option = tk.OptionMenu(self.ventana, select, "Peon",
-        #                        "Caballo", "Alfil", "Torre", "Reina", "Rey", command=self.seleccionar)
-        # option.pack(padx=10, pady=10)
+    def btn_movimiento(self):
         movimiento = tk.StringVar(
             self.ventana, value="Movimiento...", name="movimiento")
         option_movimiento = tk.OptionMenu(self.ventana, movimiento,
                                           "frente", "atras", "derecha", "izquierda", "esq_1", "esq_2", "esq_3", "esq_4", command=self.mover_pieza)
         option_movimiento.pack(padx=10, pady=10)
+
+    def btn_selec_pieza(self):
+        select = tk.StringVar(self.ventana, value="Pieza...", name="select")
+        # option = tk.OptionMenu(self.ventana, select, "Peon",
+        #                        "Caballo", "Alfil", "Torre", "Reina", "Rey", command=self.seleccionar)
+        # option.pack(padx=10, pady=10)
+
+    def pintarCuadros(self):
         cuadradoC = 8
         for i in range(cuadradoC):
             for j in range(cuadradoC):
@@ -56,6 +59,11 @@ class ventana():
                 else:  # 1
                     self.interfaz.create_rectangle(
                         i*self.cuadro, j*self.cuadro, (i+1)*self.cuadro, (j+1)*self.cuadro, fill="#58A0AD")
+
+    def crearTablero(self):
+        self.btn_movimiento()
+        self.btn_selec_pieza()
+        self.pintarCuadros()
 
     def importarpiezas(self):
         piezas = ["peonN", "peonB", "caballoN", "caballoB", "alfilN",
@@ -65,18 +73,7 @@ class ventana():
                 file="./imagenes/" + pieza + ".png")
 
     def mostrarPiezas(self):
-        cuadradoC = 8
-        for i in range(cuadradoC):
-            for j in range(cuadradoC):
-                if (i+j) % 2 == 0:  # 0
-                    # 0+0 % 2 = 0 no tiene residuo entra al if y al tener residuo su valor sera uno se dirigira al else
-                    self.interfaz.create_rectangle(
-                        i*self.cuadro, j*self.cuadro, (i+1)*self.cuadro, (j+1)*self.cuadro, fill="#FFFFFF")
-                    # 0 *0 , 0*0, 0, 0,
-
-                else:  # 1
-                    self.interfaz.create_rectangle(
-                        i*self.cuadro, j*self.cuadro, (i+1)*self.cuadro, (j+1)*self.cuadro, fill="#58A0AD")
+        self.pintarCuadros()
         for indicea, i in enumerate(self.posicion.mostrar()):  # listas
             for indiceb, j in enumerate(i):  # valores de las listas
                 if j != 0:  # al cumplirse la condicion de ser diferente de vacio se crea una pieza de lo contrario sigue

@@ -26,17 +26,17 @@ class TableroPlantilla:
                        for j in range(self.filas)]
         self.colocarPiezas(self.p_init)
 
-        matrizfomateada = f"""
-        {self.matriz[0]}
-        {self.matriz[1]}
-        {self.matriz[2]}
-        {self.matriz[3]}
-        {self.matriz[4]}
-        {self.matriz[5]}
-        {self.matriz[6]}
-        {self.matriz[7]}
-        """
-        print(matrizfomateada)
+        # matrizfomateada = f"""
+        # {self.matriz[0]}
+        # {self.matriz[1]}
+        # {self.matriz[2]}
+        # {self.matriz[3]}
+        # {self.matriz[4]}
+        # {self.matriz[5]}
+        # {self.matriz[6]}
+        # {self.matriz[7]}
+        # """
+        # print(matrizfomateada)
         return self.matriz
 
     def poner(self, posicion, valor):
