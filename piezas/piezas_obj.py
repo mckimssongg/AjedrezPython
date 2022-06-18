@@ -128,10 +128,10 @@ Piezas Negras
 ---------------------------------------------------------------------
 """
 
-reinaNegra = PiezaEspecial(
+reyNegro = PiezaBase(
     negro,
-    "reinaN",
-    {"x": 0, "y": 3},
+    "reyN",
+    {"x": 0, "y": 4},
     {
         "frente": {
             "x": 1,
@@ -168,7 +168,7 @@ reinaNegra = PiezaEspecial(
     }
 )
 
-torreNegraDerecha = PiezaEspecial(
+torre_negra_derecha = PiezaEspecial(
     negro,
     "torreN",
     {"x": 0, "y": 7},
@@ -187,8 +187,7 @@ torreNegraDerecha = PiezaEspecial(
     },
 )
 
-
-torreNegraIzquierda = PiezaEspecial(
+torre_negra_izquierda = PiezaEspecial(
     negro,
     "torreN",
     {"x": 0, "y": 0},
@@ -207,7 +206,7 @@ torreNegraIzquierda = PiezaEspecial(
     },
 )
 
-alfilNegroIzquierda = PiezaEspecial(
+alfil_negro_izquierda = PiezaEspecial(
     negro,
     "alfilN",
     {"x": 0, "y": 2},
@@ -226,7 +225,7 @@ alfilNegroIzquierda = PiezaEspecial(
     }
 )
 
-alfilNegroDerecha = PiezaEspecial(
+alfil_negro_derecha = PiezaEspecial(
     negro,
     "alfilN",
     {"x": 0, "y": 5},
@@ -242,5 +241,35 @@ alfilNegroDerecha = PiezaEspecial(
 
         "diagID":
         {"x": 1, "y": -1},
+    }
+)
+
+caballo_negro_izquierda = PiezaBase(
+    negro,
+    "caballoN",
+    {"x": 0, "y": 1},
+    {
+
+
+    }
+)
+
+caballo_negro_derecha = PiezaBase(
+    negro,
+    "caballoN",
+    {"x": 0, "y": 6},
+    {
+
+
+    }
+)
+
+reina_negro = PiezaEspecial(
+    negro,
+    "reinaN",
+    {"x": 0, "y": 3},
+    {
+
+
     }
 )

@@ -16,9 +16,10 @@ class TableroPlantilla:
         self.columnas = columnas
         self.p_init = [reina_blanca, torre_blanca,
                        torre_blanca0, alfil_blanco0,
-                       torreNegraDerecha, torreNegraIzquierda,
-                       reinaNegra, alfilNegroDerecha,
-                       alfilNegroIzquierda
+                       torre_negra_derecha, torre_negra_izquierda,
+                       reina_negro, reyNegro,
+                       alfil_negro_derecha, alfil_negro_izquierda,
+                       caballo_negro_derecha, caballo_negro_izquierda
                        ]
         self.matriz = [[0 for i in range(columnas)] for j in range(filas)]
 
