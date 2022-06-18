@@ -91,7 +91,7 @@ torre_blanca_derecha = PiezaEspecial(
 
 torre_blanca_izquierda = PiezaEspecial(
     blanco,
-    "torreB",
+    "torreBI",
     {"x": 7, "y": 0},
     {
         "frente":
@@ -110,7 +110,7 @@ torre_blanca_izquierda = PiezaEspecial(
 
 alfil_blanco_izquierdo = PiezaEspecial(
     blanco,
-    "alfilB",
+    "alfilIB",
     {"x": 7, "y": 2},
     {
 
@@ -174,90 +174,99 @@ caballo_blanco_derecho = PiezaBase(
 
 )
 
-# Realizando clase para movimientos
-peon_uno_B = PiezaBase(
+#Realizando clase para movimientos
+peon_uno_B = PiezaEspecial(
 
     blanco,
-    "peonB",
+    "peonUB",
     {"x": 6, "y": 0},
 
     {
-        # pendiente de movimientos
+        "frente":
+        {"x": -1, "y": 0},
     }
 )
 
-peon_dos_B = PiezaBase(
+peon_dos_B = PiezaEspecial(
 
     blanco,
-    "peonB",
+    "peonDB",
     {"x": 6, "y": 1},
 
     {
-        # pendiente de movimientos
+        "frente":
+        {"x": -1, "y": 0},
     }
 
 )
 
-peon_tres_B = PiezaBase(
+peon_tres_B = PiezaEspecial(
     blanco,
-    "peonB",
+    "peonTB",
     {"x": 6, "y": 2},
 
-    {
-        # pendiente de movimientos
-    }
+{
+    "frente":
+    {"x": -1, "y": 0},
+}
 )
 
-peon_cuatro_B = PiezaBase(
+peon_cuatro_B = PiezaEspecial(
 
     blanco,
-    "peonB",
+    "peonCB",
 
     {"x": 6, "y": 3},
     {
-        # pendiente de movimientos
+    "frente":
+    {"x": -1, "y": 0},
     }
 )
 
-peon_cinco_B = PiezaBase(
+peon_cinco_B =  PiezaEspecial(
     blanco,
-    "peonB",
+    "peonCiB",
     {"x": 6, "y": 4},
 
     {
-        # pendiente de movimientos
+     "frente":
+     {"x": -1, "y": 0},
     }
 )
 
-peon_seis_B = PiezaBase(
+peon_seis_B =  PiezaEspecial(
 
     blanco,
-    "peonB",
+    "peonSB",
     {"x": 6, "y": 5},
 
     {
-        # pendiente de movimientos
+       "frente":
+     {"x": -1, "y": 0},
     }
 )
 
-peon_siete_B = PiezaBase(
+peon_siete_B =  PiezaEspecial(
     blanco,
-    "peonB",
+    "peonSiB",
+    
     {"x": 6, "y": 6},
 
     {
-        # pendiente de movimientos
+      "frente":
+      {"x": -1, "y": 0},
     }
 )
 
-peon_ocho_B = PiezaBase(
+peon_ocho_B =  PiezaEspecial(
 
     blanco,
-    "peonB",
+    "peonOB",
     {"x": 6, "y": 7},
 
     {
-        # pendiente de movimientos
+      "frente":
+      {"x": -1, "y": 0},
     }
 )
 """
