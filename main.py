@@ -28,7 +28,7 @@ class ventana():
         self.movimiento_seleccionado = tk.StringVar(
             self.ventana, value="Movimiento...", name=None)
 
-        self.cant_casillas = tk.StringVar(
+        self.cant_casillas = tk.IntVar(
             self.ventana, value="Cantidad de casillas...", name=None)
 
     def __call__(self):
@@ -62,6 +62,7 @@ class ventana():
         self.motor.accion(
             movimiento=self.movimiento_seleccionado.get(),
             pieza=self.pieza_seleccionada.get(),
+            cantidad=self.cant_casillas.get(),
         )
         self.posicion.mostrar()
         self.mostrarPiezas()

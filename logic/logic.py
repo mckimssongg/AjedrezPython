@@ -21,7 +21,7 @@ class Logic:
             if i.nombre == pieza:
                 return i
 
-    def accion(self, movimiento=None, pieza=None):
+    def accion(self, movimiento=None, pieza=None, cantidad=None):
 
         if [self.tablero.mostrar()[x][y]
             for x in range(len(self.tablero.mostrar()))
@@ -29,9 +29,9 @@ class Logic:
 
             pieza = self.obtener_pieza(pieza)
 
-            if pieza.movimiento_avanzado:
+            if pieza.movimiento_avanzado and cantidad is not None:
                 self.tablero.poner(
-                    pieza.mover_pieza(movimiento),
+                    pieza.movimiento_avanzado(movimiento, cantidad),
                     pieza.nombre
                 )
             else:
