@@ -14,23 +14,18 @@ class TableroPlantilla:
         '''
         self.filas = filas
         self.columnas = columnas
-        self.p_init = [reina_blanca]
-        self.t_init = [torre_blanca]
-        self.to_init = [torre_blanca0]
-        self.al_init= [alfil_blanco0]
+        self.p_init = [reina_blanca, torre_blanca,
+                       torre_blanca0, alfil_blanco0]
         self.matriz = [[0 for i in range(columnas)] for j in range(filas)]
 
     def colocarPiezas(self, piezas):
-        for pieza in piezas:
-            self.poner(pieza.posicion_actual, pieza.nombre)
+        for i in range(len(piezas)):
+            self.poner(piezas[i].posicion_actual, piezas[i].nombre)
 
     def mostrar(self):
         self.matriz = [[0 for i in range(self.columnas)]
                        for j in range(self.filas)]
         self.colocarPiezas(self.p_init)
-        self.colocarPiezas(self.t_init)
-        self.colocarPiezas(self.to_init)
-        self.colocarPiezas(self.al_init)
 
         # matrizfomateada = f"""
         # {self.matriz[0]}
@@ -46,10 +41,10 @@ class TableroPlantilla:
         return self.matriz
 
     def poner(self, posicion, valor):
-
-        self.matriz = [[0 for i in range(self.columnas)]
-                       for j in range(self.filas)]
-        self.matriz[posicion['x']][posicion['y']] = valor
+        for x in range(self.filas):
+            for y in range(self.columnas):
+                if self.matriz[x][y] == 0:
+                    self.matriz[posicion['x']][posicion['y']] = valor
 
     def obtener(self, posicion):
         return self.matriz[posicion.x][posicion.y]

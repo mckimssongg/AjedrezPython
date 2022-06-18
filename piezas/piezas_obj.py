@@ -47,11 +47,9 @@ reina_blanca = PiezaEspecial(
 )
 
 torre_blanca = PiezaEspecial(
-
     blanco,
     "torreB",
-    {"x": 7, "y": 7},
-
+    {"x": 1, "y": 7},
     {
         "frente":
         {"x": -1, "y": 0},
@@ -64,16 +62,13 @@ torre_blanca = PiezaEspecial(
 
         "derecha":
         {"x": 0, "y": 1},
-
     },
 )
 
 torre_blanca0 = PiezaEspecial(
-
     blanco,
     "torreB",
-    {"x": 7, "y": 0},
-
+    {"x": 2, "y": 0},
     {
         "frente":
         {"x": -1, "y": 0},
@@ -86,17 +81,13 @@ torre_blanca0 = PiezaEspecial(
 
         "derecha":
         {"x": 0, "y": 1},
-
     },
 )
 
 alfil_blanco0 = PiezaEspecial(
-
     blanco,
     "alfilB",
-
-    {"x": 7, "y": 2},
-
+    {"x": 3, "y": 2},
     {
         "diagDD":
         {"x": 1, "y": 1},
@@ -114,12 +105,9 @@ alfil_blanco0 = PiezaEspecial(
 
 
 alfil_blanco = PiezaEspecial(
-
     blanco,
     "alfilB",
-
-    {"x": 7, "y": 5},
-
+    {"x": 4, "y": 5},
     {
         "diagDD":
         {"x": 1, "y": 1},
