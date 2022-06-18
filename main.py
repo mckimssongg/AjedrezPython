@@ -36,6 +36,7 @@ class ventana():
     def __call__(self):
         self.ventana.mainloop()
 
+# -----------------------------------Modificadores de variables--------------------------------
     def seleccionar(self, valor):
         self.pieza_seleccionada.set(value=valor)
 
@@ -45,6 +46,10 @@ class ventana():
     def casillas_cantidad(self, valor):
         self.cant_casillas.set(value=valor)
 
+    def change_posicion_tablero(self):
+        self.Change_Tablero = not self.Change_Tablero
+# --------------------------------Botones de seleccion--------------------------------
+
     def btn_select_movimiento(self):
         option_movimiento = tk.OptionMenu(self.ventana, self.movimiento_seleccionado,
                                           "frente", "atras", "derecha", "izquierda",  "diagIU", "diagDU",  "diagDD", "diagID", command=self.mover_pieza)
@@ -52,8 +57,8 @@ class ventana():
 
     def btn_selec_pieza(self):
         option = tk.OptionMenu(self.ventana, self.pieza_seleccionada, "peonUB", "peonDB", "peonTB", "peonCB", "peonCiB", "peonSB",
-                              "peonSiB", "peonOB",
-                               "caballoB", "alfilB","alfilIB", "torreB", "torreBI", "reinaB", "reyB", command=self.seleccionar)
+                               "peonSiB", "peonOB",
+                               "caballoB", "alfilB", "alfilIB", "torreB", "torreBI", "reinaB", "reyB", command=self.seleccionar)
         option.pack(padx=10, pady=10, side="right")
 
     def btn_select_cantidad(self):
@@ -61,6 +66,7 @@ class ventana():
                                         1, 2, 3, 4, 5, 6, 7, command=self.casillas_cantidad)
         option_cantidad.pack(padx=10, pady=10, side="left")
 
+# -------------------------------------Acciones en el tablero--------------------------------
     def moverPieza(self):
         comio_pieza = self.motor.accion(
             movimiento=self.movimiento_seleccionado.get(),
@@ -68,11 +74,10 @@ class ventana():
             cantidad=self.cant_casillas.get(),
         )
         if comio_pieza:
-            self.posicion.invertir_matriz()
-            self.mostrarPiezas()
-        else:
-            self.posicion.mostrar()
-            self.mostrarPiezas()
+            self.change_posicion_tablero()
+
+        self.posicion.mostrar()
+        self.mostrarPiezas()
 
     def pintarCuadros(self):
         cuadradoC = 8
@@ -99,9 +104,11 @@ class ventana():
         boton.pack(padx=10, pady=10, )
 
     def importarpiezas(self):
-        piezas = ["peonN", "peonB", "peonUB", "peonDB", "peonTB", "peonCB", "peonCiB", "peonSB", "peonSiB", "peonOB",
-                  "caballoN", "caballoB", "alfilN",
-                  "alfilB","alfilIB", "torreN", "torreB", "torreBI","reinaN", "reinaB", "reyN", "reyB"]
+        piezas = ["peonN", "peonB", "peonUB", "peonDB", "peonTB",
+                  "peonCB", "peonCiB", "peonSB", "peonSiB", "peonOB", "caballoN",
+                  "caballoB", "alfilN", "alfilB", "alfilIB", "torreN", "torreB",
+                  "torreBI", "reinaN", "reinaB", "reyN", "reyB"]
+
         for pieza in piezas:
             self.imagenes[pieza] = tk.PhotoImage(
                 file="./imagenes/" + pieza + ".png")
@@ -111,10 +118,10 @@ class ventana():
 
         if self.Change_Tablero:
             tablero_matriz = self.posicion.mostrar()
-            self.Change_Tablero = not self.Change_Tablero
+            self.change_posicion_tablero()
         else:
             tablero_matriz = self.posicion.invertir_matriz()
-            self.Change_Tablero = not self.Change_Tablero
+            self.change_posicion_tablero()
 
         for indicea, i in enumerate(tablero_matriz):  # listas
             for indiceb, j in enumerate(i):  # valores de las listas
