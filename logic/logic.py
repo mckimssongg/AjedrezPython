@@ -47,3 +47,4 @@ class Logic:
             print("Esta opcion no existe")
 
         return comio_prieza
+

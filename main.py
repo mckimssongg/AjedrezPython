@@ -43,6 +43,7 @@ class ventana():
     def casillas_cantidad(self, valor):
         self.cant_casillas.set(value=valor)
 
+
     def btn_select_movimiento(self):
         option_movimiento = tk.OptionMenu(self.ventana, self.movimiento_seleccionado,
                                           "frente", "atras", "derecha", "izquierda", "diagDD", "diagDU", "diagIU", "diagID", command=self.mover_pieza)
@@ -68,6 +69,7 @@ class ventana():
             self.posicion.invertir_matriz()
         else:
             self.posicion.mostrar()
+
         self.mostrarPiezas()
 
     def pintarCuadros(self):
@@ -91,6 +93,7 @@ class ventana():
         self.pintarCuadros()
         boton = tk.Button(
             self.ventana, text="Mover", command=lambda: self.moverPieza(), bg="#318A9B", fg="#FFFFFF")
+
         boton.pack(padx=10, pady=10, )
 
     def importarpiezas(self):

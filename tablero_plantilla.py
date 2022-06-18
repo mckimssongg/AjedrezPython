@@ -22,7 +22,6 @@ class TableroPlantilla:
     def colocarPiezas(self, piezas):
         for i in range(len(piezas)):
             if piezas[i].is_activated:
-
                 self.poner(piezas[i].posicion_actual, piezas[i].nombre)
 
     def mostrar(self):
@@ -47,7 +46,7 @@ class TableroPlantilla:
         matriz_invertida = self.mostrar()
         matriz_invertida = matriz_invertida[::-1]
         return matriz_invertida
-
+      
     def obtener(self, posicion):
         return self.matriz[posicion.x][posicion.y]
 
