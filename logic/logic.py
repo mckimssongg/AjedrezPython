@@ -28,7 +28,7 @@ class Logic:
 
     def accion(self, movimiento=None, pieza=None, cantidad=None):
 
-        comio_prieza = False
+        comio_pieza = False
 
         if [self.tablero.mostrar()[x][y]
             for x in range(len(self.tablero.mostrar()))
@@ -37,18 +37,19 @@ class Logic:
             pieza = self.obtener_pieza(pieza)
 
             if pieza.movimiento_avanzado and cantidad is not None:
-                comio_prieza = self.tablero.poner(
+                comio_pieza = self.tablero.poner(
                     pieza.movimiento_avanzado(movimiento, cantidad),
                     pieza.nombre
                 )
+                return comio_pieza
 
             else:
-                comio_prieza = self.tablero.poner(
+                comio_pieza = self.tablero.poner(
                     pieza.mover_pieza(movimiento),
                     pieza.nombre
                 )
 
+                return comio_pieza
+
         else:
             print("Esta opcion no existe")
-
-        return comio_prieza
