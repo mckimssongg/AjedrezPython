@@ -447,9 +447,9 @@ peon_uno_N = PiezaEspecial(
     {"x": 1, "y": 0},
 
     {
-        "frente": { "x": 1, "y": 0},
+        "frente": { "x": -1, "y": 0},
 
-        "atras": { "x": -1, "y": 0 },
+        "atras": { "x": 1, "y": 0 },
     }
 )
 
