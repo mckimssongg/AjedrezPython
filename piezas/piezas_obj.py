@@ -288,19 +288,19 @@ reyNegro = PiezaBase(
         },
         "diagDD": {
             "x": -1,
-            "y": 1,
+            "y": -1,
         },
         "diagDU": {
             "x": 1,
-            "y": 1,
+            "y": -1,
         },
         "diagIU": {
-            "x": -1,
-            "y": -1,
+            "x": 1,
+            "y": 1,
         },
         "diagID": {
-            "x": 1,
-            "y": -1,
+            "x": -1,
+            "y": 1,
         }
     }
 )
@@ -311,16 +311,16 @@ torre_negra_derecha = PiezaEspecial(
     {"x": 0, "y": 7},
     {
         "frente":
-        {"x": -1, "y": 0},
-
-        "atras":
         {"x": 1, "y": 0},
 
+        "atras":
+        {"x": -1, "y": 0},
+
         "izquierda":
-        {"x": 0, "y": -1},
+        {"x": 0, "y": 1},
 
         "derecha":
-        {"x": 0, "y": 1},
+        {"x": 0, "y": -1},
     },
 )
 
@@ -330,16 +330,16 @@ torre_negra_izquierda = PiezaEspecial(
     {"x": 0, "y": 0},
     {
         "frente":
-        {"x": -1, "y": 0},
-
-        "atras":
         {"x": 1, "y": 0},
 
+        "atras":
+        {"x": -1, "y": 0},
+
         "izquierda":
-        {"x": 0, "y": -1},
+        {"x": 0, "y": 1},
 
         "derecha":
-        {"x": 0, "y": 1},
+        {"x": 0, "y": -1},
     },
 )
 
@@ -349,16 +349,16 @@ alfil_negro_izquierda = PiezaEspecial(
     {"x": 0, "y": 2},
     {
         "diagDD":
-        {"x": 1, "y": 1},
-
-        "diagDU":
-        {"x": -1, "y": 1},
-
-        "diagIU":
         {"x": -1, "y": -1},
 
-        "diagID":
+        "diagDU":
         {"x": 1, "y": -1},
+
+        "diagIU":
+        {"x": 1, "y": 1},
+
+        "diagID":
+        {"x": -1, "y": 1},
     }
 )
 
@@ -368,16 +368,16 @@ alfil_negro_derecha = PiezaEspecial(
     {"x": 0, "y": 5},
     {
         "diagDD":
-        {"x": 1, "y": 1},
-
-        "diagDU":
-        {"x": -1, "y": 1},
-
-        "diagIU":
         {"x": -1, "y": -1},
 
-        "diagID":
+        "diagDU":
         {"x": 1, "y": -1},
+
+        "diagIU":
+        {"x": 1, "y": 1},
+
+        "diagID":
+        {"x": -1, "y": 1},
     }
 )
 
@@ -406,7 +406,133 @@ reina_negro = PiezaEspecial(
     "reinaN",
     {"x": 0, "y": 3},
     {
+        "frente": {
+            "x": 1,
+            "y": 0
+        },
+        "atras": {
+            "x": -1,
+            "y": 0
+        },
+        "derecha": {
+            "x": 0,
+            "y": -1
+        },
+        "izquierda": {
+            "x": 0,
+            "y": 1
+        },
+        "diagDD": {
+            "x": -1,
+            "y": -1,
+        },
+        "diagDU": {
+            "x": 1,
+            "y": -1,
+        },
+        "diagIU": {
+            "x": 1,
+            "y": 1,
+        },
+        "diagID": {
+            "x": -1,
+            "y": 1,
+        }
+    }
+)
 
+peon_uno_N = PiezaEspecial(
+    negro,
+    "peonUN",
+    {"x": 1, "y": 0},
 
+    {
+        "frente": { "x": 1, "y": 0},
+
+        "atras": { "x": -1, "y": 0 },
+    }
+)
+
+peon_dos_N = PiezaEspecial(
+    negro,
+    "peonDN",
+    {"x": 1, "y": 1},
+
+    {
+        "frente": { "x": 1, "y": 0},
+
+        "atras": { "x": -1, "y": 0 },
+    }
+)
+
+peon_tres_N = PiezaEspecial(
+    negro,
+    "peonTN",
+    {"x": 1, "y": 2},
+
+    {
+        "frente": { "x": 1, "y": 0},
+
+        "atras": { "x": -1, "y": 0 },
+    }
+)
+
+peon_cuatro_N = PiezaEspecial(
+    negro,
+    "peonCN",
+    {"x": 1, "y": 3},
+
+    {
+        "frente": { "x": 1, "y": 0},
+
+        "atras": { "x": -1, "y": 0 },
+    }
+)
+
+peon_cinco_N = PiezaEspecial(
+    negro,
+    "peonCiN",
+    {"x": 1, "y": 4},
+
+    {
+        "frente": { "x": 1, "y": 0},
+
+        "atras": { "x": -1, "y": 0 },
+    }
+)
+
+peon_seis_N = PiezaEspecial(
+    negro,
+    "peonSN",
+    {"x": 1, "y": 5},
+
+    {
+        "frente": { "x": 1, "y": 0},
+
+        "atras": { "x": -1, "y": 0 },
+    }
+)
+
+peon_siete_N = PiezaEspecial(
+    negro,
+    "peonSiN",
+    {"x": 1, "y": 6},
+
+    {
+        "frente": { "x": 1, "y": 0},
+
+        "atras": { "x": -1, "y": 0 },
+    }
+)
+
+peon_ocho_N = PiezaEspecial(
+    negro,
+    "peonON",
+    {"x": 1, "y": 7},
+
+    {
+        "frente": { "x": 1, "y": 0},
+
+        "atras": { "x": -1, "y": 0 },
     }
 )
