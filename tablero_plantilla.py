@@ -69,36 +69,6 @@ class TableroPlantilla:
             print("Error, movimiento fuera del tablero")
 
         return comio_pieza
-        # for x in range(self.filas):
-        #     for y in range(self.columnas):
-        #         try:
-        #             if self.matriz[x][y] == 0:
-        #                 print(self.matriz[x][y])
-        #                 print("sipaso")
-        #                 self.matriz[posicion['x']][posicion['y']] = valor
-        #                 return False
-        #             if self.matriz[x][y] != 0:
-        #                 print("no paso")
-
-        #                 pieza_actual = self.obtener_pieza(
-        #                     pieza=self.matriz[x][y])
-        #                 pieza_nueva = self.obtener_pieza(pieza=valor)
-
-        #                 print(pieza_actual.jugador.color,
-        #                       pieza_nueva.jugador.color)
-
-        #                 if pieza_actual.jugador.color == pieza_nueva.jugador.color:
-        #                     print("Hay otra pieza del mismo color")
-        #                 else:
-        #                     pieza_actual.change_is_activated()
-        #                     self.matriz[x][y] = 0
-        #                     self.matriz[posicion['x']][posicion['y']] = valor
-
-        #                 return True
-        #         except IndexError:
-        #             print("Error")
-        #             self.colocarPiezas(self.p_init)
-        #             print("Error, movimiento fuera del tablero")
 
     def invertir_matriz(self):
         matriz_invertida = self.mostrar()
