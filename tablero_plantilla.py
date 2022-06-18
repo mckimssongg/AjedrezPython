@@ -19,10 +19,12 @@ class TableroPlantilla:
         self.p_init = [reina_blanca, rey_blanco, torre_blanca_derecha, torre_blanca_izquierda,
                        alfil_blanco_izquierdo, alfil_blanco_derecho,
                        caballo_blanco_izquierdo, caballo_blanco_derecho, peon_uno_B, peon_dos_B, peon_tres_B, peon_cuatro_B,
-                       peon_cinco_B, peon_seis_B, peon_siete_B, peon_ocho_B, torre_negra_derecha, torre_negra_izquierda,
-                       reina_negro, reyNegro,
-                       alfil_negro_derecha, alfil_negro_izquierda,
-                       caballo_negro_derecha, caballo_negro_izquierda]
+                       peon_cinco_B, peon_seis_B, peon_siete_B, peon_ocho_B,
+                       #    torre_negra_derecha, torre_negra_izquierda,
+                       #    reina_negro, reyNegro,
+                       #    alfil_negro_derecha, alfil_negro_izquierda,
+                       #    caballo_negro_derecha, caballo_negro_izquierda
+                       ]
 
         self.matriz = [[0 for i in range(columnas)] for j in range(filas)]
 
@@ -38,16 +40,65 @@ class TableroPlantilla:
         return self.matriz
 
     def poner(self, posicion, valor):
-        for x in range(self.filas):
-            for y in range(self.columnas):
-                if self.matriz[x][y] == 0:
+        comio_pieza = True
+        try:
+            if self.matriz[posicion['x']][posicion['y']] == 0:
+                print(self.matriz[posicion['x']][posicion['y']])
+                print("sipaso")
+                self.matriz[posicion['x']][posicion['y']] = valor
+                comio_pieza = False
+            if self.matriz[posicion['x']][posicion['y']] != 0:
+                print("no paso")
+
+                pieza_actual = self.obtener_pieza(
+                    pieza=self.matriz[posicion['x']][posicion['y']])
+                pieza_nueva = self.obtener_pieza(pieza=valor)
+
+                if pieza_actual.jugador.color == pieza_nueva.jugador.color:
+                    print("Hay otra pieza del mismo color")
+                    comio_pieza = False
+                else:
+                    pieza_actual.change_is_activated()
+                    self.matriz[posicion['x']][posicion['y']] = 0
                     self.matriz[posicion['x']][posicion['y']] = valor
-                    return False
-                if self.matriz[x][y] != 0:
-                    # pieza = Logic.obtener_pieza(self.matriz[x][y])
-                    # pieza['is_activated'] = False
-                    self.matriz[posicion['x']][posicion['y']] = valor
-                    return True
+
+                    comio_pieza = True
+        except IndexError:
+            print("Error")
+            self.colocarPiezas(self.p_init)
+            print("Error, movimiento fuera del tablero")
+
+        return comio_pieza
+        # for x in range(self.filas):
+        #     for y in range(self.columnas):
+        #         try:
+        #             if self.matriz[x][y] == 0:
+        #                 print(self.matriz[x][y])
+        #                 print("sipaso")
+        #                 self.matriz[posicion['x']][posicion['y']] = valor
+        #                 return False
+        #             if self.matriz[x][y] != 0:
+        #                 print("no paso")
+
+        #                 pieza_actual = self.obtener_pieza(
+        #                     pieza=self.matriz[x][y])
+        #                 pieza_nueva = self.obtener_pieza(pieza=valor)
+
+        #                 print(pieza_actual.jugador.color,
+        #                       pieza_nueva.jugador.color)
+
+        #                 if pieza_actual.jugador.color == pieza_nueva.jugador.color:
+        #                     print("Hay otra pieza del mismo color")
+        #                 else:
+        #                     pieza_actual.change_is_activated()
+        #                     self.matriz[x][y] = 0
+        #                     self.matriz[posicion['x']][posicion['y']] = valor
+
+        #                 return True
+        #         except IndexError:
+        #             print("Error")
+        #             self.colocarPiezas(self.p_init)
+        #             print("Error, movimiento fuera del tablero")
 
     def invertir_matriz(self):
         matriz_invertida = self.mostrar()
@@ -57,11 +108,10 @@ class TableroPlantilla:
     def obtener(self, posicion):
         return self.matriz[posicion.x][posicion.y]
 
-    def obtener_filas(self):
-        return self.filas
-
-    def obtener_columnas(self):
-        return self.columnas
+    def obtener_pieza(self, pieza):
+        for i in self.p_init:
+            if i.nombre == pieza:
+                return i
 
 
 play = TableroPlantilla(8, 8)

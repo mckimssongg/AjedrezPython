@@ -64,6 +64,10 @@ class PiezaBase:
 
         return self.posicion_actual
 
+    def change_is_activated(self):
+        self.is_activated = not self.is_activated
+        return self.is_activated
+
     def __str__(self):
         return self.nombre
 
@@ -77,6 +81,7 @@ class PiezaEspecial(PiezaBase):  # Pendiente a cambios
 
     def __init__(self, jugador, nombre, posicion_inicial, movimientos, is_activated=True):
         super().__init__(jugador, nombre, posicion_inicial, movimientos, is_activated)
+        self.is_activated = is_activated
 
     def movimiento_avanzado(self, nombre_movimiento, cantidad):
         '''
