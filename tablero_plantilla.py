@@ -19,7 +19,7 @@ class TableroPlantilla:
         self.p_init = [reina_blanca, rey_blanco, torre_blanca_derecha, torre_blanca_izquierda,
                        alfil_blanco_izquierdo, alfil_blanco_derecho,
                        caballo_blanco_izquierdo, caballo_blanco_derecho, peon_uno_B, peon_dos_B, peon_tres_B, peon_cuatro_B,
-                       peon_cinco_B, peon_seis_B, peon_siete_B, peon_ocho_B,torre_negra_derecha, torre_negra_izquierda,
+                       peon_cinco_B, peon_seis_B, peon_siete_B, peon_ocho_B, torre_negra_derecha, torre_negra_izquierda,
                        reina_negro, reyNegro,
                        alfil_negro_derecha, alfil_negro_izquierda,
                        caballo_negro_derecha, caballo_negro_izquierda]
@@ -44,8 +44,8 @@ class TableroPlantilla:
                     self.matriz[posicion['x']][posicion['y']] = valor
                     return False
                 if self.matriz[x][y] != 0:
-                    pieza = Logic.obtener_pieza(self.matriz[x][y])
-                    pieza['is_activated'] = False
+                    # pieza = Logic.obtener_pieza(self.matriz[x][y])
+                    # pieza['is_activated'] = False
                     self.matriz[posicion['x']][posicion['y']] = valor
                     return True
 

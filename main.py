@@ -43,7 +43,6 @@ class ventana():
     def casillas_cantidad(self, valor):
         self.cant_casillas.set(value=valor)
 
-
     def btn_select_movimiento(self):
         option_movimiento = tk.OptionMenu(self.ventana, self.movimiento_seleccionado,
                                           "frente", "atras", "derecha", "izquierda", "diagDD", "diagDU", "diagIU", "diagID", command=self.mover_pieza)
