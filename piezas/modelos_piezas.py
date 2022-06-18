@@ -1,3 +1,6 @@
+from dataclasses import asdict
+
+
 class Jugador:
     '''
     Las instancias de esta clase nos serviran para
@@ -82,10 +85,8 @@ class PiezaEspecial(PiezaBase):  # Pendiente a cambios
         -puedan moverse en linea recta
 
         # Parametros:
-        pieza               --->    (object) instancia de una clase pieza
         nombre_movimiento   --->    (string) nombre del movimiento que se desea realizar
         cantidad            --->    (int) cantidad de casillas que se desea mover
-        direccion           --->    (string) direccion en la que se desea mover
         '''
         movimiento = self.movimientos[nombre_movimiento]
 
