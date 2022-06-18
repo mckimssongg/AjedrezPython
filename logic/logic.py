@@ -1,6 +1,6 @@
+import os
 from piezas.piezas_obj import (reina_blanca, torre_blanca, torre_blanca0, alfil_blanco0,
                                alfil_blanco)
-import os
 
 
 def borrarPantalla(): return os.system(
@@ -13,11 +13,32 @@ borrarPantalla()
 class Logic:
     def __init__(self, tablero):
         self.tablero = tablero
+        self.piezas = [reina_blanca, torre_blanca, torre_blanca0, alfil_blanco0,
+                       alfil_blanco]
+
+    def obtener_pieza(self, pieza):
+        for i in self.piezas:
+            if i.nombre == pieza:
+                return i
 
     def accion(self, movimiento=None, pieza=None):
 
-        if pieza is self.tablero.mostrar():
+        if [self.tablero.mostrar()[x][y]
+            for x in range(len(self.tablero.mostrar()))
+                for y in range(len(self.tablero.mostrar()[x]))].__contains__(pieza):
+
+            pieza = self.obtener_pieza(pieza)
+
             if pieza.movimiento_avanzado:
-                self.tablero.poner(pieza.mover_pieza, pieza.nombre)
+                self.tablero.poner(
+                    pieza.mover_pieza(movimiento),
+                    pieza.nombre
+                )
+            else:
+                self.tablero.poner(
+                    pieza.mover_pieza(movimiento),
+                    pieza.nombre
+                )
+
         else:
             print("Esta opcion no existe")

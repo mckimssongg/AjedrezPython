@@ -1,15 +1,15 @@
 import tkinter as tk  # Se importa la libreria tkinter
-from tablero_plantilla import play
+from tablero_plantilla import play as tb
 from logic.logic import Logic
 
 
 class ventana():
     def __init__(self, cuadro):
-        self.posicion = play  # se impora el rchivo con la clase
+        self.posicion = tb  # se impora el rchivo con la clase
         self.cuadro = cuadro
         self.imagenes = {}
         self.ventana = tk.Tk()  # se crea una ventana
-        self.motor = Logic(play)
+        self.motor = Logic(self.posicion)
         self.ventana.title("Juego de Ajedrez")  # titulo de la ventana
         # icono de la ventana pendiente
         self.ventana.iconbitmap("./imagenes/icon.ico/")
@@ -28,14 +28,20 @@ class ventana():
         self.movimiento_seleccionado = tk.StringVar(
             self.ventana, value="Movimiento...", name=None)
 
+        self.cant_casillas = tk.StringVar(
+            self.ventana, value="Cantidad de casillas...", name=None)
+
     def __call__(self):
         self.ventana.mainloop()
 
     def seleccionar(self, valor):
-        self.pieza_seleccionada = valor
+        self.pieza_seleccionada.set(value=valor)
 
     def mover_pieza(self, valor):
-        self.movimiento_seleccionado = valor
+        self.movimiento_seleccionado.set(value=valor)
+
+    def casillas_cantidad(self, valor):
+        self.cant_casillas.set(value=valor)
 
     def btn_select_movimiento(self):
         option_movimiento = tk.OptionMenu(self.ventana, self.movimiento_seleccionado,
@@ -43,14 +49,20 @@ class ventana():
         option_movimiento.pack(padx=10, pady=10, side="left")
 
     def btn_selec_pieza(self):
-        select = tk.StringVar(self.ventana, value="Pieza...", name="select")
         option = tk.OptionMenu(self.ventana, self.pieza_seleccionada, "Peon",
-                               "Caballo", "Alfil", "Torre", "Reina", "Rey", command=self.seleccionar)
+                               "Caballo", "Alfil", "Torre", "reinaB", "Rey", command=self.seleccionar)
         option.pack(padx=10, pady=10, side="right")
 
+    def btn_select_cantidad(self):
+        option_cantidad = tk.OptionMenu(self.ventana, self.cant_casillas,
+                                        1, 2, 3, 4, 5, 6, 7, command=self.casillas_cantidad)
+        option_cantidad.pack(padx=10, pady=10, side="left")
+
     def moverPieza(self):
-        self.motor.accion(movimiento=self.pieza_seleccionada,
-                          pieza=self.movimiento_seleccionado)
+        self.motor.accion(
+            movimiento=self.movimiento_seleccionado.get(),
+            pieza=self.pieza_seleccionada.get(),
+        )
         self.posicion.mostrar()
         self.mostrarPiezas()
 
@@ -71,9 +83,10 @@ class ventana():
     def crearTablero(self):
         self.btn_select_movimiento()
         self.btn_selec_pieza()
+        self.btn_select_cantidad()
         self.pintarCuadros()
         boton = tk.Button(
-            self.ventana, text="Mover", command=lambda: self.moverPieza())
+            self.ventana, text="Mover", command=lambda: self.moverPieza(), bg="#318A9B", fg="#FFFFFF")
         boton.pack(padx=10, pady=10, )
 
     def importarpiezas(self):
