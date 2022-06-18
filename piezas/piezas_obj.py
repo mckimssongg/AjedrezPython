@@ -113,6 +113,7 @@ alfil_blanco_izquierdo = PiezaEspecial(
     "alfilB",
     {"x": 7, "y": 2},
     {
+
         "diagDD":
         {"x": 1, "y": 1},
 
