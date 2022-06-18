@@ -108,7 +108,6 @@ class ventana():
 
         piezas = ["peonN", "peonB", "peonUB", "peonDB", "peonTB", "peonCB", "peonCiB", "peonSB", "peonSiB", "peonOB", "peonUN", "peonDN", "peonTN", "caballoN", "alfilN", "reinaN", "reyN",
                   "peonCN", "peonCiN", "peonSN", "peonSiN", "peonON", "caballoB", "alfilB", "alfilIB", "torreB", "torreBI", "reinaB", "reyB", "torreN", ]
-        print(len(piezas), "------------------------------------------------------------")
 
         for pieza in piezas:
             self.imagenes[pieza] = tk.PhotoImage(

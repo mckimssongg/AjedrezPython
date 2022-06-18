@@ -174,7 +174,7 @@ caballo_blanco_derecho = PiezaBase(
 
 )
 
-#Realizando clase para movimientos
+# Realizando clase para movimientos
 peon_uno_B = PiezaEspecial(
 
     blanco,
@@ -205,10 +205,10 @@ peon_tres_B = PiezaEspecial(
     "peonTB",
     {"x": 6, "y": 2},
 
-{
-    "frente":
-    {"x": -1, "y": 0},
-}
+    {
+        "frente":
+        {"x": -1, "y": 0},
+    }
 )
 
 peon_cuatro_B = PiezaEspecial(
@@ -218,55 +218,55 @@ peon_cuatro_B = PiezaEspecial(
 
     {"x": 6, "y": 3},
     {
-    "frente":
-    {"x": -1, "y": 0},
+        "frente":
+        {"x": -1, "y": 0},
     }
 )
 
-peon_cinco_B =  PiezaEspecial(
+peon_cinco_B = PiezaEspecial(
     blanco,
     "peonCiB",
     {"x": 6, "y": 4},
 
     {
-     "frente":
-     {"x": -1, "y": 0},
+        "frente":
+        {"x": -1, "y": 0},
     }
 )
 
-peon_seis_B =  PiezaEspecial(
+peon_seis_B = PiezaEspecial(
 
     blanco,
     "peonSB",
     {"x": 6, "y": 5},
 
     {
-       "frente":
-     {"x": -1, "y": 0},
+        "frente":
+        {"x": -1, "y": 0},
     }
 )
 
-peon_siete_B =  PiezaEspecial(
+peon_siete_B = PiezaEspecial(
     blanco,
     "peonSiB",
-    
+
     {"x": 6, "y": 6},
 
     {
-      "frente":
-      {"x": -1, "y": 0},
+        "frente":
+        {"x": -1, "y": 0},
     }
 )
 
-peon_ocho_B =  PiezaEspecial(
+peon_ocho_B = PiezaEspecial(
 
     blanco,
     "peonOB",
     {"x": 6, "y": 7},
 
     {
-      "frente":
-      {"x": -1, "y": 0},
+        "frente":
+        {"x": -1, "y": 0},
     }
 )
 """
@@ -446,8 +446,8 @@ peon_uno_N = PiezaEspecial(
 
     {"x": 1, "y": 0},
     {
-    "frente":
-    {"x": -1, "y": 0},
+        "frente":
+        {"x": -1, "y": 0},
     }
 )
 
@@ -458,8 +458,8 @@ peon_dos_N = PiezaEspecial(
 
     {"x": 1, "y": 1},
     {
-    "frente":
-    {"x": -1, "y": 0},
+        "frente":
+        {"x": -1, "y": 0},
     }
 )
 
@@ -470,8 +470,8 @@ peon_tres_N = PiezaEspecial(
 
     {"x": 1, "y": 2},
     {
-    "frente":
-    {"x": -1, "y": 0},
+        "frente":
+        {"x": -1, "y": 0},
     }
 )
 
@@ -482,8 +482,8 @@ peon_cuatro_N = PiezaEspecial(
 
     {"x": 1, "y": 3},
     {
-    "frente":
-    {"x": -1, "y": 0},
+        "frente":
+        {"x": -1, "y": 0},
     }
 )
 
@@ -494,8 +494,8 @@ peon_cinco_N = PiezaEspecial(
 
     {"x": 1, "y": 4},
     {
-    "frente":
-    {"x": -1, "y": 0},
+        "frente":
+        {"x": -1, "y": 0},
     }
 )
 
@@ -506,8 +506,8 @@ peon_seis_N = PiezaEspecial(
 
     {"x": 1, "y": 5},
     {
-    "frente":
-    {"x": -1, "y": 0},
+        "frente":
+        {"x": -1, "y": 0},
     }
 )
 
@@ -518,8 +518,8 @@ peon_siete_N = PiezaEspecial(
 
     {"x": 1, "y": 6},
     {
-    "frente":
-    {"x": -1, "y": 0},
+        "frente":
+        {"x": -1, "y": 0},
     }
 )
 
@@ -530,7 +530,7 @@ peon_ocho_N = PiezaEspecial(
 
     {"x": 1, "y": 7},
     {
-    "frente":
-    {"x": -1, "y": 0},
+        "frente":
+        {"x": -1, "y": 0},
     }
 )
