@@ -1,8 +1,7 @@
 
-from piezas.piezas_obj import (reina_blanca, rey_blanco,torre_blanca_derecha, torre_blanca_izquierda,
+from piezas.piezas_obj import (reina_blanca, rey_blanco, torre_blanca_derecha, torre_blanca_izquierda,
                                alfil_blanco_izquierdo, alfil_blanco_derecho,
-                               caballo_blanco_izquierdo, caballo_blanco_derecho
-                               , peon_uno_B, peon_dos_B, peon_tres_B, peon_cuatro_B, 
+                               caballo_blanco_izquierdo, caballo_blanco_derecho, peon_uno_B, peon_dos_B, peon_tres_B, peon_cuatro_B,
                                peon_cinco_B, peon_seis_B, peon_siete_B, peon_ocho_B)
 import os
 
@@ -17,8 +16,10 @@ def borrarPantalla(): return os.system(
 class Logic:
     def __init__(self, tablero):
         self.tablero = tablero
-        self.piezas = [reina_blanca, torre_blanca, torre_blanca0, alfil_blanco0,
-                       alfil_blanco]
+        self.piezas = [reina_blanca, rey_blanco, torre_blanca_derecha, torre_blanca_izquierda,
+                       alfil_blanco_izquierdo, alfil_blanco_derecho,
+                       caballo_blanco_izquierdo, caballo_blanco_derecho, peon_uno_B, peon_dos_B, peon_tres_B, peon_cuatro_B,
+                       peon_cinco_B, peon_seis_B, peon_siete_B, peon_ocho_B]
 
     def obtener_pieza(self, pieza):
         for i in self.piezas:
@@ -51,4 +52,3 @@ class Logic:
             print("Esta opcion no existe")
 
         return comio_prieza
-
