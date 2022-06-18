@@ -7,7 +7,7 @@ def borrarPantalla(): return os.system(
     'cls' if os.name in ('nt', 'dos') else 'clear')
 
 
-borrarPantalla()
+# borrarPantalla()
 
 
 class Logic:
@@ -23,6 +23,8 @@ class Logic:
 
     def accion(self, movimiento=None, pieza=None, cantidad=None):
 
+        comio_prieza = False
+
         if [self.tablero.mostrar()[x][y]
             for x in range(len(self.tablero.mostrar()))
                 for y in range(len(self.tablero.mostrar()[x]))].__contains__(pieza):
@@ -30,15 +32,18 @@ class Logic:
             pieza = self.obtener_pieza(pieza)
 
             if pieza.movimiento_avanzado and cantidad is not None:
-                self.tablero.poner(
+                comio_prieza = self.tablero.poner(
                     pieza.movimiento_avanzado(movimiento, cantidad),
                     pieza.nombre
                 )
+
             else:
-                self.tablero.poner(
+                comio_prieza = self.tablero.poner(
                     pieza.mover_pieza(movimiento),
                     pieza.nombre
                 )
 
         else:
             print("Esta opcion no existe")
+
+        return comio_prieza

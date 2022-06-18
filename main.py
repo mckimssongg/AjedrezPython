@@ -59,12 +59,15 @@ class ventana():
         option_cantidad.pack(padx=10, pady=10, side="left")
 
     def moverPieza(self):
-        self.motor.accion(
+        comio_pieza = self.motor.accion(
             movimiento=self.movimiento_seleccionado.get(),
             pieza=self.pieza_seleccionada.get(),
             cantidad=self.cant_casillas.get(),
         )
-        self.posicion.mostrar()
+        if comio_pieza:
+            self.posicion.invertir_matriz()
+        else:
+            self.posicion.mostrar()
         self.mostrarPiezas()
 
     def pintarCuadros(self):

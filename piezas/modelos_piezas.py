@@ -25,11 +25,12 @@ class PiezaBase:
                                 de la pieza
     '''
 
-    def __init__(self, jugador, nombre, posicion_inicial, movimientos):
+    def __init__(self, jugador, nombre, posicion_inicial, movimientos, is_activated=True):
         self.jugador = jugador
         self.nombre = nombre
         self.posicion_actual = posicion_inicial
         self.movimientos = movimientos
+        self.is_activated = is_activated
 
     def mover_pieza(self, nombre_movimiento):
         '''
@@ -71,8 +72,8 @@ class PiezaEspecial(PiezaBase):  # Pendiente a cambios
     tiene un metodo para moverse en diagonal y en linea recta dependiendo
     '''
 
-    def __init__(self, jugador, nombre, posicion_inicial, movimientos):
-        super().__init__(jugador, nombre, posicion_inicial, movimientos)
+    def __init__(self, jugador, nombre, posicion_inicial, movimientos, is_activated=True):
+        super().__init__(jugador, nombre, posicion_inicial, movimientos, is_activated)
 
     def movimiento_avanzado(self, nombre_movimiento, cantidad):
         '''
