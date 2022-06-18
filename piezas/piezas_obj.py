@@ -46,10 +46,34 @@ reina_blanca = PiezaEspecial(
     }
 )
 
-torre_blanca = PiezaEspecial(
+rey_blanco = PiezaEspecial(
+
+    blanco,
+    "reyB",
+    { "x": 7, "y": 4 },
+    {
+        "frente": { "x": -1, "y": 0},
+
+        "atras": { "x": 1, "y": 0 },
+
+        "derecha": { "x": 0, "y": 1},
+
+        "izquierda": { "x": 0, "y": -1 },
+
+        "diagDD": { "x": 1, "y": 1},
+
+        "diagDU": { "x": -1, "y": 1},
+
+        "diagIU": { "x": -1, "y": -1},
+
+        "diagID": {"x": 1, "y": -1}
+    }    
+)
+
+torre_blanca_derecha = PiezaEspecial(
     blanco,
     "torreB",
-    {"x": 1, "y": 7},
+    {"x": 7, "y": 7},
     {
         "frente":
         {"x": -1, "y": 0},
@@ -65,10 +89,10 @@ torre_blanca = PiezaEspecial(
     },
 )
 
-torre_blanca0 = PiezaEspecial(
+torre_blanca_izquierda = PiezaEspecial(
     blanco,
     "torreB",
-    {"x": 2, "y": 0},
+    {"x": 7, "y": 0},
     {
         "frente":
         {"x": -1, "y": 0},
@@ -84,10 +108,10 @@ torre_blanca0 = PiezaEspecial(
     },
 )
 
-alfil_blanco0 = PiezaEspecial(
+alfil_blanco_izquierdo = PiezaEspecial(
     blanco,
     "alfilB",
-    {"x": 3, "y": 2},
+    {"x": 7, "y": 2},
     {
         "diagDD":
         {"x": 1, "y": 1},
@@ -104,10 +128,10 @@ alfil_blanco0 = PiezaEspecial(
 )
 
 
-alfil_blanco = PiezaEspecial(
+alfil_blanco_derecho = PiezaEspecial(
     blanco,
     "alfilB",
-    {"x": 4, "y": 5},
+    {"x": 7, "y": 5},
     {
         "diagDD":
         {"x": 1, "y": 1},
@@ -120,5 +144,118 @@ alfil_blanco = PiezaEspecial(
 
         "diagID":
         {"x": 1, "y": -1},
+    }
+)
+
+caballo_blanco_izquierdo = PiezaBase( 
+
+    blanco,
+    "caballoB",
+
+    {"x": 7, "y": 1},
+
+    {
+        #pendiente de movimientos
+    }
+
+)
+
+caballo_blanco_derecho = PiezaBase( 
+
+    blanco,
+    "caballoB",
+
+    {"x": 7, "y": 6},
+
+    {
+        #pendiente de movimientos
+    }
+
+)
+
+#Realizando clase para movimientos
+peon_uno_B = PiezaBase(
+
+    blanco,
+    "peonB",
+    {"x": 6, "y": 0},
+
+    {
+        #pendiente de movimientos
+    }
+)
+
+peon_dos_B = PiezaBase(
+
+    blanco,
+    "peonB",
+    {"x": 6, "y": 1},
+
+    {
+        #pendiente de movimientos
+    }
+
+)
+
+peon_tres_B = PiezaBase(
+    blanco,
+    "peonB",
+    {"x": 6, "y": 2},
+
+{
+    #pendiente de movimientos
+}
+)
+
+peon_cuatro_B = PiezaBase(
+
+    blanco,
+    "peonB",
+
+    {"x": 6, "y": 3},
+    {
+        #pendiente de movimientos
+    }
+)
+
+peon_cinco_B = PiezaBase(
+    blanco,
+    "peonB",
+    {"x": 6, "y": 4},
+
+    {
+        #pendiente de movimientos
+    }
+)
+
+peon_seis_B = PiezaBase(
+
+    blanco,
+    "peonB",
+    {"x": 6, "y": 5},
+
+    {
+        #pendiente de movimientos
+    }
+)
+
+peon_siete_B = PiezaBase(
+    blanco,
+    "peonB",
+    {"x": 6, "y": 6},
+
+    {
+        #pendiente de movimientos
+    }
+)
+
+peon_ocho_B = PiezaBase(
+
+    blanco,
+    "peonB",
+    {"x": 6, "y": 7},
+
+    {
+        #pendiente de movimientos
     }
 )
