@@ -15,7 +15,11 @@ class TableroPlantilla:
         self.filas = filas
         self.columnas = columnas
         self.p_init = [reina_blanca, torre_blanca,
-                       torre_blanca0, alfil_blanco0]
+                       torre_blanca0, alfil_blanco0,
+                       torreNegraDerecha, torreNegraIzquierda,
+                       reinaNegra, alfilNegroDerecha,
+                       alfilNegroIzquierda
+                       ]
         self.matriz = [[0 for i in range(columnas)] for j in range(filas)]
 
     def colocarPiezas(self, piezas):

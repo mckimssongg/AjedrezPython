@@ -122,3 +122,125 @@ alfil_blanco = PiezaEspecial(
         {"x": 1, "y": -1},
     }
 )
+
+"""
+Piezas Negras
+---------------------------------------------------------------------
+"""
+
+reinaNegra = PiezaEspecial(
+    negro,
+    "reinaN",
+    {"x": 0, "y": 3},
+    {
+        "frente": {
+            "x": 1,
+            "y": 0
+        },
+        "atras": {
+            "x": -1,
+            "y": 0
+        },
+        "derecha": {
+            "x": 0,
+            "y": -1
+        },
+        "izquierda": {
+            "x": 0,
+            "y": 1
+        },
+        "diagDD": {
+            "x": -1,
+            "y": 1,
+        },
+        "diagDU": {
+            "x": 1,
+            "y": 1,
+        },
+        "diagIU": {
+            "x": -1,
+            "y": -1,
+        },
+        "diagID": {
+            "x": 1,
+            "y": -1,
+        }
+    }
+)
+
+torreNegraDerecha = PiezaEspecial(
+    negro,
+    "torreN",
+    {"x": 0, "y": 7},
+    {
+        "frente":
+        {"x": -1, "y": 0},
+
+        "atras":
+        {"x": 1, "y": 0},
+
+        "izquierda":
+        {"x": 0, "y": -1},
+
+        "derecha":
+        {"x": 0, "y": 1},
+    },
+)
+
+
+torreNegraIzquierda = PiezaEspecial(
+    negro,
+    "torreN",
+    {"x": 0, "y": 0},
+    {
+        "frente":
+        {"x": -1, "y": 0},
+
+        "atras":
+        {"x": 1, "y": 0},
+
+        "izquierda":
+        {"x": 0, "y": -1},
+
+        "derecha":
+        {"x": 0, "y": 1},
+    },
+)
+
+alfilNegroIzquierda = PiezaEspecial(
+    negro,
+    "alfilN",
+    {"x": 0, "y": 2},
+    {
+        "diagDD":
+        {"x": 1, "y": 1},
+
+        "diagDU":
+        {"x": -1, "y": 1},
+
+        "diagIU":
+        {"x": -1, "y": -1},
+
+        "diagID":
+        {"x": 1, "y": -1},
+    }
+)
+
+alfilNegroDerecha = PiezaEspecial(
+    negro,
+    "alfilN",
+    {"x": 0, "y": 5},
+    {
+        "diagDD":
+        {"x": 1, "y": 1},
+
+        "diagDU":
+        {"x": -1, "y": 1},
+
+        "diagIU":
+        {"x": -1, "y": -1},
+
+        "diagID":
+        {"x": 1, "y": -1},
+    }
+)
