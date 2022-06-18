@@ -15,5 +15,4 @@ class juego():
                 "peonB", "peonB",   "peonB", "peonB"],
             ["torreB", "caballoB", "alfilB",  "reinaB",
                 "reyB", "alfilB", "caballoB", "torreB"]
-
         ]

@@ -1,6 +1,5 @@
 import tkinter as tk  # Se importa la libreria tkinter
 from tablero_plantilla import play
-import posicionesP  # importar archivo de posiciones
 from logic.logic import Logic
 
 
@@ -15,36 +14,45 @@ class ventana():
         # icono de la ventana pendiente
         self.ventana.iconbitmap("./imagenes/icon.ico/")
         # se proporciona la altura y ancho
-        self.ventana.geometry(f"{str(cuadro * 8 )}x{str(cuadro * 8+ 55 )}")
+        self.ventana.geometry(
+            f"{str(cuadro * 8 )}x{str(cuadro * 8+ 55)}")
         # tamaño fijo de la ventana, evita que se agrande o minimice
         self.ventana.resizable(0, 0)
-
-        # agregarle un input para que el usuario pueda ingresar datos que se pinten en la consola
-
         self.interfaz = tk.Canvas(self.ventana)  # Permite acceder a graficos
         # para que ocupe toda la ventana
         self.interfaz.pack(fill="both", expand=True)
 
+        self.pieza_seleccionada = tk.StringVar(
+            self.ventana, value="pieza", name=None)
+
+        self.movimiento_seleccionado = tk.StringVar(
+            self.ventana, value="Movimiento...", name=None)
+
     def __call__(self):
         self.ventana.mainloop()
 
-    def mover_pieza(self, valor):
-        self.motor.accion(movimiento=valor)
-        self.posicion.mostrar()
-        self.mostrarPiezas()
+    def seleccionar(self, valor):
+        self.pieza_seleccionada = valor
 
-    def btn_movimiento(self):
-        movimiento = tk.StringVar(
-            self.ventana, value="Movimiento...", name="movimiento")
-        option_movimiento = tk.OptionMenu(self.ventana, movimiento,
+    def mover_pieza(self, valor):
+        self.movimiento_seleccionado = valor
+
+    def btn_select_movimiento(self):
+        option_movimiento = tk.OptionMenu(self.ventana, self.movimiento_seleccionado,
                                           "frente", "atras", "derecha", "izquierda", "diagDD", "diagDU", "diagIU", "diagID", command=self.mover_pieza)
-        option_movimiento.pack(padx=10, pady=10)
+        option_movimiento.pack(padx=10, pady=10, side="left")
 
     def btn_selec_pieza(self):
         select = tk.StringVar(self.ventana, value="Pieza...", name="select")
-        # option = tk.OptionMenu(self.ventana, select, "Peon",
-        #                        "Caballo", "Alfil", "Torre", "Reina", "Rey", command=self.seleccionar)
-        # option.pack(padx=10, pady=10)
+        option = tk.OptionMenu(self.ventana, self.pieza_seleccionada, "Peon",
+                               "Caballo", "Alfil", "Torre", "Reina", "Rey", command=self.seleccionar)
+        option.pack(padx=10, pady=10, side="right")
+
+    def moverPieza(self):
+        self.motor.accion(movimiento=self.pieza_seleccionada,
+                          pieza=self.movimiento_seleccionado)
+        self.posicion.mostrar()
+        self.mostrarPiezas()
 
     def pintarCuadros(self):
         cuadradoC = 8
@@ -61,9 +69,12 @@ class ventana():
                         i*self.cuadro, j*self.cuadro, (i+1)*self.cuadro, (j+1)*self.cuadro, fill="#58A0AD")
 
     def crearTablero(self):
-        self.btn_movimiento()
+        self.btn_select_movimiento()
         self.btn_selec_pieza()
         self.pintarCuadros()
+        boton = tk.Button(
+            self.ventana, text="Mover", command=lambda: self.moverPieza())
+        boton.pack(padx=10, pady=10, )
 
     def importarpiezas(self):
         piezas = ["peonN", "peonB", "caballoN", "caballoB", "alfilN",
