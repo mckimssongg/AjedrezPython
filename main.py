@@ -53,7 +53,9 @@ class ventana():
     def btn_selec_pieza(self):
         option = tk.OptionMenu(self.ventana, self.pieza_seleccionada, "peonUB", "peonDB", "peonTB", "peonCB", "peonCiB", "peonSB",
                               "peonSiB", "peonOB",
-                               "caballoB", "alfilB","alfilIB", "torreB", "torreBI", "reinaB", "reyB", command=self.seleccionar)
+                              "caballoB", "alfilB","alfilIB", "torreB", "torreBI", "reinaB", "reyB",
+                              "torreN", 
+                              command=self.seleccionar)
         option.pack(padx=10, pady=10, side="right")
 
     def btn_select_cantidad(self):
@@ -101,7 +103,7 @@ class ventana():
     def importarpiezas(self):
         piezas = ["peonN", "peonB", "peonUB", "peonDB", "peonTB", "peonCB", "peonCiB", "peonSB", "peonSiB", "peonOB",
                   "caballoN", "caballoB", "alfilN",
-                  "alfilB","alfilIB", "torreN", "torreB", "torreBI","reinaN", "reinaB", "reyN", "reyB"]
+                  "alfilB","alfilIB", "torreB", "torreBI","reinaN", "reinaB", "reyN", "reyB", "torreN",]
         for pieza in piezas:
             self.imagenes[pieza] = tk.PhotoImage(
                 file="./imagenes/" + pieza + ".png")
