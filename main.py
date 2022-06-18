@@ -31,6 +31,8 @@ class ventana():
         self.cant_casillas = tk.IntVar(
             self.ventana, value="Cantidad de casillas...", name=None)
 
+        self.Change_Tablero = True
+
     def __call__(self):
         self.ventana.mainloop()
 
@@ -45,7 +47,7 @@ class ventana():
 
     def btn_select_movimiento(self):
         option_movimiento = tk.OptionMenu(self.ventana, self.movimiento_seleccionado,
-                                          "frente", "atras", "derecha", "izquierda", "diagDD", "diagDU", "diagIU", "diagID", command=self.mover_pieza)
+                                          "frente", "atras", "derecha", "izquierda",  "diagIU", "diagDU",  "diagDD", "diagID", command=self.mover_pieza)
         option_movimiento.pack(padx=10, pady=10, side="left")
 
     def btn_selec_pieza(self):
@@ -67,10 +69,10 @@ class ventana():
         )
         if comio_pieza:
             self.posicion.invertir_matriz()
+            self.mostrarPiezas()
         else:
             self.posicion.mostrar()
-
-        self.mostrarPiezas()
+            self.mostrarPiezas()
 
     def pintarCuadros(self):
         cuadradoC = 8
@@ -106,7 +108,15 @@ class ventana():
 
     def mostrarPiezas(self):
         self.pintarCuadros()
-        for indicea, i in enumerate(self.posicion.mostrar()):  # listas
+
+        if self.Change_Tablero:
+            tablero_matriz = self.posicion.mostrar()
+            self.Change_Tablero = not self.Change_Tablero
+        else:
+            tablero_matriz = self.posicion.invertir_matriz()
+            self.Change_Tablero = not self.Change_Tablero
+
+        for indicea, i in enumerate(tablero_matriz):  # listas
             for indiceb, j in enumerate(i):  # valores de las listas
                 if j != 0:  # al cumplirse la condicion de ser diferente de vacio se crea una pieza de lo contrario sigue
                     self.interfaz.create_image(

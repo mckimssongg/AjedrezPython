@@ -50,24 +50,24 @@ rey_blanco = PiezaEspecial(
 
     blanco,
     "reyB",
-    { "x": 7, "y": 4 },
+    {"x": 7, "y": 4},
     {
-        "frente": { "x": -1, "y": 0},
+        "frente": {"x": -1, "y": 0},
 
-        "atras": { "x": 1, "y": 0 },
+        "atras": {"x": 1, "y": 0},
 
-        "derecha": { "x": 0, "y": 1},
+        "derecha": {"x": 0, "y": 1},
 
-        "izquierda": { "x": 0, "y": -1 },
+        "izquierda": {"x": 0, "y": -1},
 
-        "diagDD": { "x": 1, "y": 1},
+        "diagDD": {"x": 1, "y": 1},
 
-        "diagDU": { "x": -1, "y": 1},
+        "diagDU": {"x": -1, "y": 1},
 
-        "diagIU": { "x": -1, "y": -1},
+        "diagIU": {"x": -1, "y": -1},
 
         "diagID": {"x": 1, "y": -1}
-    }    
+    }
 )
 
 torre_blanca_derecha = PiezaEspecial(
@@ -148,7 +148,7 @@ alfil_blanco_derecho = PiezaEspecial(
     }
 )
 
-caballo_blanco_izquierdo = PiezaBase( 
+caballo_blanco_izquierdo = PiezaBase(
 
     blanco,
     "caballoB",
@@ -156,12 +156,12 @@ caballo_blanco_izquierdo = PiezaBase(
     {"x": 7, "y": 1},
 
     {
-        #pendiente de movimientos
+        # pendiente de movimientos
     }
 
 )
 
-caballo_blanco_derecho = PiezaBase( 
+caballo_blanco_derecho = PiezaBase(
 
     blanco,
     "caballoB",
@@ -169,7 +169,7 @@ caballo_blanco_derecho = PiezaBase(
     {"x": 7, "y": 6},
 
     {
-        #pendiente de movimientos
+        # pendiente de movimientos
     }
 
 )
